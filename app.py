@@ -81,6 +81,10 @@ def getJSON():
         data = json.load(f)
     return data
 
+#@app.route('/test')
+#def test():
+#    return render_template('leafletjstest.html')
+
 def on_marker_click(**kwargs):
     print("Marker clicked! Details:", kwargs)
 
