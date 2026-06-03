@@ -1,0 +1,2369 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.220895, 16.960212] },
+      "properties": {
+        "project#": 1,
+        "district": "Stann Creek",
+        "location": "Dangriga",
+        "latitude": 16.96021201861535,
+        "longitude": -88.22089486248514,
+        "project_title": "Enhancing the Resilience of Belize\u2019s Coastal Communities to Climate Change\r\nImpacts Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.282541, 16.853551] },
+      "properties": {
+        "project#": 1,
+        "district": "Stann Creek",
+        "location": "Hopkins",
+        "latitude": 16.853550798867563,
+        "longitude": -88.28254109894341,
+        "project_title": "Enhancing the Resilience of Belize\u2019s Coastal Communities to Climate Change\r\nImpacts Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.144418, 18.354351] },
+      "properties": {
+        "project#": 2,
+        "district": "Corozal",
+        "location": "Sarteneja",
+        "latitude": 18.35435071947504,
+        "longitude": -88.1444175646548,
+        "project_title": "Smart Coasts Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.356736, 18.296168] },
+      "properties": {
+        "project#": 2,
+        "district": "Corozal",
+        "location": "Chunox",
+        "latitude": 18.296167631129904,
+        "longitude": -88.35673628466857,
+        "project_title": "Smart Coasts Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.355997, 18.321952] },
+      "properties": {
+        "project#": 2,
+        "district": "Corozal",
+        "location": "Copperbank",
+        "latitude": 18.321952462397118,
+        "longitude": -88.35599734984864,
+        "project_title": "Smart Coasts Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.299915, 18.456594] },
+      "properties": {
+        "project#": 2,
+        "district": "Corozal",
+        "location": "Consejo",
+        "latitude": 18.456594189686594,
+        "longitude": -88.29991496247366,
+        "project_title": "Smart Coasts Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.392216, 18.398805] },
+      "properties": {
+        "project#": 2,
+        "district": "Corozal",
+        "location": "Corozal town",
+        "latitude": 18.398804575952656,
+        "longitude": -88.39221614043736,
+        "project_title": "Smart Coasts Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.927572, 18.032687] },
+      "properties": {
+        "project#": 2,
+        "district": "Belize",
+        "location": "Ambergris caye",
+        "latitude": 18.032687040440106,
+        "longitude": -87.92757191489771,
+        "project_title": "Smart Coasts Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.028563, 17.762109] },
+      "properties": {
+        "project#": 2,
+        "district": "Belize",
+        "location": "Caye caulker",
+        "latitude": 17.762109416300586,
+        "longitude": -88.0285632893311,
+        "project_title": "Smart Coasts Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.282512, 16.853741] },
+      "properties": {
+        "project#": 2,
+        "district": "Stann Creek",
+        "location": "Hopkins",
+        "latitude": 16.85374130718915,
+        "longitude": -88.28251190745571,
+        "project_title": "Smart Coasts Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.311284, 16.689359] },
+      "properties": {
+        "project#": 2,
+        "district": "Stann Creek",
+        "location": "Riversdale",
+        "latitude": 16.689358788090203,
+        "longitude": -88.31128378499649,
+        "project_title": "Smart Coasts Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.366195, 16.578337] },
+      "properties": {
+        "project#": 2,
+        "district": "Stann Creek",
+        "location": "Seine Bight",
+        "latitude": 16.578337115795357,
+        "longitude": -88.36619523743147,
+        "project_title": "Smart Coasts Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.368661, 16.517794] },
+      "properties": {
+        "project#": 2,
+        "district": "Stann Creek",
+        "location": "Placencia",
+        "latitude": 16.517794008507433,
+        "longitude": -88.36866140417517,
+        "project_title": "Smart Coasts Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.422621, 16.534261] },
+      "properties": {
+        "project#": 2,
+        "district": "Stann Creek",
+        "location": "Independence",
+        "latitude": 16.534260845252987,
+        "longitude": -88.42262061493918,
+        "project_title": "Smart Coasts Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.396646, 17.450127] },
+      "properties": {
+        "project#": 3,
+        "district": "Belize",
+        "location": "Hattieville",
+        "latitude": 17.45012732354982,
+        "longitude": -88.39664554115238,
+        "project_title": "Building community resilience via transformative adaptation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.542873, 17.778129] },
+      "properties": {
+        "project#": 3,
+        "district": "Belize",
+        "location": "Crooked Tree Village",
+        "latitude": 17.778128735301163,
+        "longitude": -88.54287288112855,
+        "project_title": "Building community resilience via transformative adaptation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.143622, 18.355111] },
+      "properties": {
+        "project#": 3,
+        "district": "Corozal",
+        "location": "Sarteneja",
+        "latitude": 18.35511130056628,
+        "longitude": -88.1436217593129,
+        "project_title": "Building community resilience via transformative adaptation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.151459, 17.026352] },
+      "properties": {
+        "project#": 3,
+        "district": "Cayo",
+        "location": "Mopan River",
+        "latitude": 17.02635191,
+        "longitude": -89.15145884,
+        "project_title": "Building community resilience via transformative adaptation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.850705, 16.91934] },
+      "properties": {
+        "project#": 3,
+        "district": "Cayo",
+        "location": "Macal River",
+        "latitude": 16.91933972,
+        "longitude": -88.85070521,
+        "project_title": "Building community resilience via transformative adaptation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.214346, 17.506386] },
+      "properties": {
+        "project#": 4,
+        "district": "Belize",
+        "location": "Belize City",
+        "latitude": 17.506385551592693,
+        "longitude": -88.2143455722047,
+        "project_title": "Marine Conservation and Climate Adaptation Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.355451, 18.321444] },
+      "properties": {
+        "project#": 4,
+        "district": "Corozal",
+        "location": "Copperbank",
+        "latitude": 18.321444081243083,
+        "longitude": -88.3554506290114,
+        "project_title": "Marine Conservation and Climate Adaptation Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.356594, 18.296214] },
+      "properties": {
+        "project#": 4,
+        "district": "Corozal",
+        "location": "Chunox",
+        "latitude": 18.29621351105299,
+        "longitude": -88.3565944459751,
+        "project_title": "Marine Conservation and Climate Adaptation Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.299401, 18.455924] },
+      "properties": {
+        "project#": 4,
+        "district": "Corozal",
+        "location": "Consejo",
+        "latitude": 18.45592441401953,
+        "longitude": -88.29940118555349,
+        "project_title": "Marine Conservation and Climate Adaptation Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.391424, 18.398878] },
+      "properties": {
+        "project#": 4,
+        "district": "Corozal",
+        "location": "Corozal town",
+        "latitude": 18.398878177796792,
+        "longitude": -88.39142360339793,
+        "project_title": "Marine Conservation and Climate Adaptation Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.143994, 18.354521] },
+      "properties": {
+        "project#": 4,
+        "district": "Corozal",
+        "location": "Sarteneja",
+        "latitude": 18.35452061340401,
+        "longitude": -88.14399439902273,
+        "project_title": "Marine Conservation and Climate Adaptation Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.366101, 16.578275] },
+      "properties": {
+        "project#": 4,
+        "district": "Stann Creek",
+        "location": "Seine Bight",
+        "latitude": 16.578274757151664,
+        "longitude": -88.36610101807881,
+        "project_title": "Marine Conservation and Climate Adaptation Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.311413, 16.688931] },
+      "properties": {
+        "project#": 4,
+        "district": "Stann Creek",
+        "location": "Riversdale",
+        "latitude": 16.688930500555472,
+        "longitude": -88.31141344952746,
+        "project_title": "Marine Conservation and Climate Adaptation Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.28285, 16.853757] },
+      "properties": {
+        "project#": 4,
+        "district": "Stann Creek",
+        "location": "Hopkins",
+        "latitude": 16.853756899040775,
+        "longitude": -88.28285030374425,
+        "project_title": "Marine Conservation and Climate Adaptation Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.22088, 16.960044] },
+      "properties": {
+        "project#": 4,
+        "district": "Stann Creek",
+        "location": "Dangriga",
+        "latitude": 16.960043932461456,
+        "longitude": -88.22087956534716,
+        "project_title": "Marine Conservation and Climate Adaptation Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.368709, 16.517908] },
+      "properties": {
+        "project#": 4,
+        "district": "Stann Creek",
+        "location": "Placencia",
+        "latitude": 16.517908010196635,
+        "longitude": -88.36870908838519,
+        "project_title": "Marine Conservation and Climate Adaptation Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.269295, 16.819297] },
+      "properties": {
+        "project#": 4,
+        "district": "Stann Creek",
+        "location": "Sittee River",
+        "latitude": 16.81929675114627,
+        "longitude": -88.26929473282301,
+        "project_title": "Marine Conservation and Climate Adaptation Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.773675, 17.873245] },
+      "properties": {
+        "project#": 5,
+        "district": "Orange Walk",
+        "location": "San Felipe",
+        "latitude": 17.873245150080642,
+        "longitude": -88.7736753054043,
+        "project_title": "Securing 96,000 hectares of the Selva Maya\u2019s tropical forest for protection and\r\nconservation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.866682, 17.883425] },
+      "properties": {
+        "project#": 5,
+        "district": "Orange Walk",
+        "location": "Blue Creek",
+        "latitude": 17.88342459,
+        "longitude": -88.86668185,
+        "project_title": "Securing 96,000 hectares of the Selva Maya\u2019s tropical forest for protection and\r\nconservation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [0.000382, -0.000223] },
+      "properties": {
+        "project#": 5,
+        "district": "Orange Walk",
+        "location": "Sylvester",
+        "latitude": -0.0002226902661339,
+        "longitude": 0.0003819573496157,
+        "project_title": "Securing 96,000 hectares of the Selva Maya\u2019s tropical forest for protection and\r\nconservation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.011875, 17.323252] },
+      "properties": {
+        "project#": 5,
+        "district": "Cayo",
+        "location": "Los Tambos",
+        "latitude": 17.323251607920046,
+        "longitude": -89.0118745961741,
+        "project_title": "Securing 96,000 hectares of the Selva Maya\u2019s tropical forest for protection and\r\nconservation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.93338, 17.353764] },
+      "properties": {
+        "project#": 5,
+        "district": "Cayo",
+        "location": "La Gracia",
+        "latitude": 17.35376389818862,
+        "longitude": -88.9333798719746,
+        "project_title": "Securing 96,000 hectares of the Selva Maya\u2019s tropical forest for protection and\r\nconservation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [0.000343, 0.000142] },
+      "properties": {
+        "project#": 5,
+        "district": "Cayo",
+        "location": "Yalbac",
+        "latitude": 0.0001421785206807,
+        "longitude": 0.0003425907488672,
+        "project_title": "Securing 96,000 hectares of the Selva Maya\u2019s tropical forest for protection and\r\nconservation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.941373, 17.251495] },
+      "properties": {
+        "project#": 5,
+        "district": "Cayo",
+        "location": "Buena Vista",
+        "latitude": 17.25149481777603,
+        "longitude": -88.94137261893573,
+        "project_title": "Securing 96,000 hectares of the Selva Maya\u2019s tropical forest for protection and\r\nconservation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.017946, 17.279456] },
+      "properties": {
+        "project#": 5,
+        "district": "Cayo",
+        "location": "Spanish Lookout",
+        "latitude": 17.27945593,
+        "longitude": -89.01794631,
+        "project_title": "Securing 96,000 hectares of the Selva Maya\u2019s tropical forest for protection and\r\nconservation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.841535, 17.328574] },
+      "properties": {
+        "project#": 5,
+        "district": "Cayo",
+        "location": "Valley of Peace",
+        "latitude": 17.328573931263143,
+        "longitude": -88.84153543824263,
+        "project_title": "Securing 96,000 hectares of the Selva Maya\u2019s tropical forest for protection and\r\nconservation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.773991, 17.873379] },
+      "properties": {
+        "project#": 6,
+        "district": "Orange Walk",
+        "location": "San Felipe",
+        "latitude": 17.873378549678534,
+        "longitude": -88.77399119496413,
+        "project_title": "Regenerative agriculture and reforestation with communities in the Belize Maya\r\nForest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.000266, -0.000431] },
+      "properties": {
+        "project#": 6,
+        "district": "Cayo",
+        "location": "Selena",
+        "latitude": -0.0004307088476831,
+        "longitude": -0.000265796147536,
+        "project_title": "Regenerative agriculture and reforestation with communities in the Belize Maya\r\nForest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [0.000242, 0.000298] },
+      "properties": {
+        "project#": 6,
+        "district": "Cayo",
+        "location": "Yalbac",
+        "latitude": 0.0002984608065467,
+        "longitude": 0.0002417908907312,
+        "project_title": "Regenerative agriculture and reforestation with communities in the Belize Maya\r\nForest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.932722, 17.353357] },
+      "properties": {
+        "project#": 6,
+        "district": "Cayo",
+        "location": "La Gracia",
+        "latitude": 17.353357358288058,
+        "longitude": -88.93272204248989,
+        "project_title": "Regenerative agriculture and reforestation with communities in the Belize Maya\r\nForest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.941072, 17.251622] },
+      "properties": {
+        "project#": 6,
+        "district": "Cayo",
+        "location": "Buena Vista",
+        "latitude": 17.251621873313457,
+        "longitude": -88.94107238474612,
+        "project_title": "Regenerative agriculture and reforestation with communities in the Belize Maya\r\nForest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.012064, 17.322932] },
+      "properties": {
+        "project#": 6,
+        "district": "Cayo",
+        "location": "Los Tambos",
+        "latitude": 17.322932378361774,
+        "longitude": -89.01206410578828,
+        "project_title": "Regenerative agriculture and reforestation with communities in the Belize Maya\r\nForest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.841883, 17.32827] },
+      "properties": {
+        "project#": 6,
+        "district": "Cayo",
+        "location": "Valley of Peace",
+        "latitude": 17.328270426627643,
+        "longitude": -88.84188335303507,
+        "project_title": "Regenerative agriculture and reforestation with communities in the Belize Maya\r\nForest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.028599, 17.762435] },
+      "properties": {
+        "project#": 7,
+        "district": "Belize",
+        "location": "Caye Caulker",
+        "latitude": 17.762435433402125,
+        "longitude": -88.02859915987028,
+        "project_title": "Strengthening coral reef resilience through science for adaptive management"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.973137, 17.909466] },
+      "properties": {
+        "project#": 7,
+        "district": "Belize",
+        "location": "San Pedro",
+        "latitude": 17.909466165697044,
+        "longitude": -87.97313734267921,
+        "project_title": "Strengthening coral reef resilience through science for adaptive management"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.928053, 18.032627] },
+      "properties": {
+        "project#": 7,
+        "district": "Belize",
+        "location": "Ambergris caye",
+        "latitude": 18.032626778249654,
+        "longitude": -87.92805325029846,
+        "project_title": "Strengthening coral reef resilience through science for adaptive management"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.864419, 17.380093] },
+      "properties": {
+        "project#": 7,
+        "district": "Belize",
+        "location": "Turneffe Atoll Marine Reserve",
+        "latitude": 17.38009301,
+        "longitude": -87.86441948,
+        "project_title": "Strengthening coral reef resilience through science for adaptive management"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.369775, 16.99474] },
+      "properties": {
+        "project#": 8,
+        "district": "Stann Creek",
+        "location": "Pomona",
+        "latitude": 16.99474018,
+        "longitude": -88.36977494,
+        "project_title": "Enhancing reef health through a Ridge to Reef Program for improved watershed\r\nmanagement and enhanced water quality monitoring in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.424816, 16.999314] },
+      "properties": {
+        "project#": 8,
+        "district": "Stann Creek",
+        "location": "Steadfast",
+        "latitude": 16.99931398,
+        "longitude": -88.42481609,
+        "project_title": "Enhancing reef health through a Ridge to Reef Program for improved watershed\r\nmanagement and enhanced water quality monitoring in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.402332, 16.987603] },
+      "properties": {
+        "project#": 8,
+        "district": "Stann Creek",
+        "location": "Alta Visa",
+        "latitude": 16.98760271,
+        "longitude": -88.40233217,
+        "project_title": "Enhancing reef health through a Ridge to Reef Program for improved watershed\r\nmanagement and enhanced water quality monitoring in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.000299, 0.000134] },
+      "properties": {
+        "project#": 8,
+        "district": "Stann Creek",
+        "location": "Hummingbird",
+        "latitude": 0.0001336080725898,
+        "longitude": -0.0002991463554226,
+        "project_title": "Enhancing reef health through a Ridge to Reef Program for improved watershed\r\nmanagement and enhanced water quality monitoring in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.368844, 16.517115] },
+      "properties": {
+        "project#": 8,
+        "district": "Stann Creek",
+        "location": "Placencia",
+        "latitude": 16.51711467578818,
+        "longitude": -88.36884383795609,
+        "project_title": "Enhancing reef health through a Ridge to Reef Program for improved watershed\r\nmanagement and enhanced water quality monitoring in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.220764, 16.959781] },
+      "properties": {
+        "project#": 8,
+        "district": "Stann Creek",
+        "location": "Dangriga",
+        "latitude": 16.959781140410858,
+        "longitude": -88.22076392376812,
+        "project_title": "Enhancing reef health through a Ridge to Reef Program for improved watershed\r\nmanagement and enhanced water quality monitoring in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.283148, 16.853152] },
+      "properties": {
+        "project#": 8,
+        "district": "Stann Creek",
+        "location": "Hopkins",
+        "latitude": 16.853152444892327,
+        "longitude": -88.28314792269407,
+        "project_title": "Enhancing reef health through a Ridge to Reef Program for improved watershed\r\nmanagement and enhanced water quality monitoring in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.365586, 16.577671] },
+      "properties": {
+        "project#": 8,
+        "district": "Stann Creek",
+        "location": "Seine Bight",
+        "latitude": 16.57767064741039,
+        "longitude": -88.36558598062389,
+        "project_title": "Enhancing reef health through a Ridge to Reef Program for improved watershed\r\nmanagement and enhanced water quality monitoring in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.310718, 16.689277] },
+      "properties": {
+        "project#": 8,
+        "district": "Stann Creek",
+        "location": "Riversdale",
+        "latitude": 16.689277023034315,
+        "longitude": -88.31071782935487,
+        "project_title": "Enhancing reef health through a Ridge to Reef Program for improved watershed\r\nmanagement and enhanced water quality monitoring in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.269352, 16.819646] },
+      "properties": {
+        "project#": 8,
+        "district": "Stann Creek",
+        "location": "Sittee River",
+        "latitude": 16.819645799563588,
+        "longitude": -88.26935197499037,
+        "project_title": "Enhancing reef health through a Ridge to Reef Program for improved watershed\r\nmanagement and enhanced water quality monitoring in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.486489, 16.365962] },
+      "properties": {
+        "project#": 8,
+        "district": "Toledo",
+        "location": "Monkey River",
+        "latitude": 16.365961505620273,
+        "longitude": -88.48648930519914,
+        "project_title": "Enhancing reef health through a Ridge to Reef Program for improved watershed\r\nmanagement and enhanced water quality monitoring in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [0.000374, 0.000359] },
+      "properties": {
+        "project#": 8,
+        "district": "Belize",
+        "location": "Belize River",
+        "latitude": 0.0003590302498363,
+        "longitude": 0.0003743710548001,
+        "project_title": "Enhancing reef health through a Ridge to Reef Program for improved watershed\r\nmanagement and enhanced water quality monitoring in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.000455, 0.000301] },
+      "properties": {
+        "project#": 8,
+        "district": "Belize",
+        "location": "Sibun River",
+        "latitude": 0.0003008037361585,
+        "longitude": -0.0004553779471531,
+        "project_title": "Enhancing reef health through a Ridge to Reef Program for improved watershed\r\nmanagement and enhanced water quality monitoring in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.486608, 16.365938] },
+      "properties": {
+        "project#": 9,
+        "district": "Toledo",
+        "location": "Monkey River",
+        "latitude": 16.365938207459767,
+        "longitude": -88.4866077424936,
+        "project_title": "Restoration of riparian forest in Monkey River"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.143886, 18.354492] },
+      "properties": {
+        "project#": 10,
+        "district": "Corozal",
+        "location": "Sarteneja",
+        "latitude": 18.354492154189007,
+        "longitude": -88.14388617574964,
+        "project_title": "Increased protection of species in the Corozal Bay Wildlife Sanctuary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.310499, 16.689097] },
+      "properties": {
+        "project#": 11,
+        "district": "Stann Creek",
+        "location": "Riversdale",
+        "latitude": 16.689097165015916,
+        "longitude": -88.31049877889242,
+        "project_title": "Protection and conservation of commercial species and fish spawning aggregation\r\nsites in Sapodilla Cayes Marine Reserve"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.282713, 16.853427] },
+      "properties": {
+        "project#": 11,
+        "district": "Stann Creek",
+        "location": "Hopkins",
+        "latitude": 16.853427476052342,
+        "longitude": -88.28271297999775,
+        "project_title": "Protection and conservation of commercial species and fish spawning aggregation\r\nsites in Sapodilla Cayes Marine Reserve"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.368964, 16.517156] },
+      "properties": {
+        "project#": 11,
+        "district": "Stann Creek",
+        "location": "Placencia",
+        "latitude": 16.517155968836494,
+        "longitude": -88.36896368629667,
+        "project_title": "Protection and conservation of commercial species and fish spawning aggregation\r\nsites in Sapodilla Cayes Marine Reserve"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.486704, 16.366182] },
+      "properties": {
+        "project#": 11,
+        "district": "Toledo",
+        "location": "Monkey River",
+        "latitude": 16.366181898585975,
+        "longitude": -88.48670350332777,
+        "project_title": "Protection and conservation of commercial species and fish spawning aggregation\r\nsites in Sapodilla Cayes Marine Reserve"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.000209, -0.000495] },
+      "properties": {
+        "project#": 11,
+        "district": "Toledo",
+        "location": "Punta River",
+        "latitude": -0.0004953199489071,
+        "longitude": -0.0002089444059255,
+        "project_title": "Protection and conservation of commercial species and fish spawning aggregation\r\nsites in Sapodilla Cayes Marine Reserve"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [0.000369, 0.000479] },
+      "properties": {
+        "project#": 12,
+        "district": "Toledo",
+        "location": "Punta Negra",
+        "latitude": 0.0004790835303632,
+        "longitude": 0.0003690491613328,
+        "project_title": "Building capacities in forest fire management among Indigenous Peoples and local\r\ncommunities"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.486668, 16.36628] },
+      "properties": {
+        "project#": 12,
+        "district": "Toledo",
+        "location": "Monkey River",
+        "latitude": 16.36628043117296,
+        "longitude": -88.48666788698061,
+        "project_title": "Building capacities in forest fire management among Indigenous Peoples and local\r\ncommunities"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.800811, 16.361046] },
+      "properties": {
+        "project#": 12,
+        "district": "Toledo",
+        "location": "Golden Stream",
+        "latitude": 16.361045638401933,
+        "longitude": -88.80081087452767,
+        "project_title": "Building capacities in forest fire management among Indigenous Peoples and local\r\ncommunities"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.744294, 16.439348] },
+      "properties": {
+        "project#": 12,
+        "district": "Toledo",
+        "location": "Medina Bank",
+        "latitude": 16.439347577493507,
+        "longitude": -88.74429372873708,
+        "project_title": "Building capacities in forest fire management among Indigenous Peoples and local\r\ncommunities"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.000415, 4.3e-5] },
+      "properties": {
+        "project#": 12,
+        "district": "Toledo",
+        "location": "Cattle Landing",
+        "latitude": 4.301190091428309e-5,
+        "longitude": -0.0004146232857654,
+        "project_title": "Building capacities in forest fire management among Indigenous Peoples and local\r\ncommunities"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.601115, 16.481965] },
+      "properties": {
+        "project#": 12,
+        "district": "Toledo",
+        "location": "Bladen",
+        "latitude": 16.481964567335588,
+        "longitude": -88.60111511571823,
+        "project_title": "Building capacities in forest fire management among Indigenous Peoples and local\r\ncommunities"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.954772, 16.2694] },
+      "properties": {
+        "project#": 12,
+        "district": "Toledo",
+        "location": "San Pedro Columbia",
+        "latitude": 16.26939994,
+        "longitude": -88.95477167,
+        "project_title": "Building capacities in forest fire management among Indigenous Peoples and local\r\ncommunities"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.835146, 16.312083] },
+      "properties": {
+        "project#": 12,
+        "district": "Toledo",
+        "location": "Indian Creek",
+        "latitude": 16.312083421701626,
+        "longitude": -88.8351457305079,
+        "project_title": "Building capacities in forest fire management among Indigenous Peoples and local\r\ncommunities"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.885644, 16.261866] },
+      "properties": {
+        "project#": 12,
+        "district": "Toledo",
+        "location": "Big Falls",
+        "latitude": 16.261865726863586,
+        "longitude": -88.88564358883649,
+        "project_title": "Building capacities in forest fire management among Indigenous Peoples and local\r\ncommunities"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.611591, 17.092138] },
+      "properties": {
+        "project#": 13,
+        "district": "Cayo",
+        "location": "St. Margaret Village",
+        "latitude": 17.09213814,
+        "longitude": -88.61159072,
+        "project_title": "Sustainable management of the Five Blues Lake National Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.150136, 17.022744] },
+      "properties": {
+        "project#": 14,
+        "district": "Cayo",
+        "location": "Arenal",
+        "latitude": 17.02274388,
+        "longitude": -89.1501363,
+        "project_title": "Strengthening the capacity of farmers and local communities to adapt to climate\r\nchange in the Vaca Forest Reserve"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.128068, 17.08434] },
+      "properties": {
+        "project#": 14,
+        "district": "Cayo",
+        "location": "San Jose Succotz",
+        "latitude": 17.084340268653804,
+        "longitude": -89.12806817073476,
+        "project_title": "Strengthening the capacity of farmers and local communities to adapt to climate\r\nchange in the Vaca Forest Reserve"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.135359, 17.071244] },
+      "properties": {
+        "project#": 14,
+        "district": "Cayo",
+        "location": "Benque Viejo del Carmen",
+        "latitude": 17.07124407,
+        "longitude": -89.1353588,
+        "project_title": "Strengthening the capacity of farmers and local communities to adapt to climate\r\nchange in the Vaca Forest Reserve"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.368568, 16.517317] },
+      "properties": {
+        "project#": 15,
+        "district": "Stann Creek",
+        "location": "Placencia",
+        "latitude": 16.517317351208725,
+        "longitude": -88.36856757895683,
+        "project_title": "Empowering women and youth participation in a sustainable seaweed mariculture\r\nindustry"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.600849, 16.482862] },
+      "properties": {
+        "project#": 16,
+        "district": "Toledo",
+        "location": "Bladen",
+        "latitude": 16.482862441333765,
+        "longitude": -88.60084916408144,
+        "project_title": "Promoting biodiversity conservation through crop zoning and sustainable farming\r\npractices in Belize\u2019s Maya Golden Landscapes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.637616, 16.516861] },
+      "properties": {
+        "project#": 16,
+        "district": "Toledo",
+        "location": "Trio",
+        "latitude": 16.516861086177084,
+        "longitude": -88.63761614140039,
+        "project_title": "Promoting biodiversity conservation through crop zoning and sustainable farming\r\npractices in Belize\u2019s Maya Golden Landscapes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.128822, 17.083419] },
+      "properties": {
+        "project#": 16,
+        "district": "Toledo",
+        "location": "San Jose Succotz",
+        "latitude": 17.083419294639178,
+        "longitude": -89.12882233496745,
+        "project_title": "Promoting biodiversity conservation through crop zoning and sustainable farming\r\npractices in Belize\u2019s Maya Golden Landscapes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.091924, 16.161584] },
+      "properties": {
+        "project#": 16,
+        "district": "Toledo",
+        "location": "Aguacate",
+        "latitude": 16.161584161605855,
+        "longitude": -89.09192357736997,
+        "project_title": "Promoting biodiversity conservation through crop zoning and sustainable farming\r\npractices in Belize\u2019s Maya Golden Landscapes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.885348, 16.261331] },
+      "properties": {
+        "project#": 16,
+        "district": "Toledo",
+        "location": "Big Falls",
+        "latitude": 16.261331120662415,
+        "longitude": -88.88534779726676,
+        "project_title": "Promoting biodiversity conservation through crop zoning and sustainable farming\r\npractices in Belize\u2019s Maya Golden Landscapes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.801065, 16.360188] },
+      "properties": {
+        "project#": 16,
+        "district": "Toledo",
+        "location": "Golden Stream",
+        "latitude": 16.360187776161986,
+        "longitude": -88.80106543860535,
+        "project_title": "Promoting biodiversity conservation through crop zoning and sustainable farming\r\npractices in Belize\u2019s Maya Golden Landscapes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.835601, 16.312066] },
+      "properties": {
+        "project#": 16,
+        "district": "Toledo",
+        "location": "Indian Creek",
+        "latitude": 16.312065620643978,
+        "longitude": -88.83560071358382,
+        "project_title": "Promoting biodiversity conservation through crop zoning and sustainable farming\r\npractices in Belize\u2019s Maya Golden Landscapes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.745005, 16.439039] },
+      "properties": {
+        "project#": 16,
+        "district": "Toledo",
+        "location": "Medina Bank",
+        "latitude": 16.43903949110405,
+        "longitude": -88.74500518721965,
+        "project_title": "Promoting biodiversity conservation through crop zoning and sustainable farming\r\npractices in Belize\u2019s Maya Golden Landscapes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.891089, 16.279505] },
+      "properties": {
+        "project#": 16,
+        "district": "Toledo",
+        "location": "Silver Creek",
+        "latitude": 16.27950495,
+        "longitude": -88.89108895,
+        "project_title": "Promoting biodiversity conservation through crop zoning and sustainable farming\r\npractices in Belize\u2019s Maya Golden Landscapes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.933375, 16.293353] },
+      "properties": {
+        "project#": 16,
+        "district": "Toledo",
+        "location": "San Miguel",
+        "latitude": 16.29335273,
+        "longitude": -88.9333747,
+        "project_title": "Promoting biodiversity conservation through crop zoning and sustainable farming\r\npractices in Belize\u2019s Maya Golden Landscapes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.637986, 16.516242] },
+      "properties": {
+        "project#": 17,
+        "district": "Toledo",
+        "location": "Trio",
+        "latitude": 16.516241671316894,
+        "longitude": -88.63798591172315,
+        "project_title": "Restoring degraded lands within key areas of the Maya Mountain North Forest Reserve\r\nand surrounding buffer zones"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.531422, 16.508597] },
+      "properties": {
+        "project#": 17,
+        "district": "Toledo",
+        "location": "Bella Vista",
+        "latitude": 16.50859665,
+        "longitude": -88.53142193,
+        "project_title": "Restoring degraded lands within key areas of the Maya Mountain North Forest Reserve\r\nand surrounding buffer zones"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.094566, 16.266151] },
+      "properties": {
+        "project#": 18,
+        "district": "Toledo",
+        "location": "San Jose",
+        "latitude": 16.26615121,
+        "longitude": -89.09456631,
+        "project_title": "Strengthening community agroforestry through cooperatives for resilient livelihoods"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.091782, 16.162255] },
+      "properties": {
+        "project#": 18,
+        "district": "Toledo",
+        "location": "Aguacate",
+        "latitude": 16.162254827568745,
+        "longitude": -89.09178150137768,
+        "project_title": "Strengthening community agroforestry through cooperatives for resilient livelihoods"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.028834, 16.040514] },
+      "properties": {
+        "project#": 19,
+        "district": "Toledo",
+        "location": "Sunday Wood",
+        "latitude": 16.04051354,
+        "longitude": -89.0288338,
+        "project_title": "Agroforestry, sustainable forestry, and reforestation in watersheds in the Toledo District"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.054223, 16.135463] },
+      "properties": {
+        "project#": 19,
+        "district": "Toledo",
+        "location": "Santa Teresa",
+        "latitude": 16.13546288,
+        "longitude": -89.05422313,
+        "project_title": "Agroforestry, sustainable forestry, and reforestation in watersheds in the Toledo District"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [0.000371, 0.000258] },
+      "properties": {
+        "project#": 19,
+        "district": "Toledo",
+        "location": "Conejo",
+        "latitude": 0.0002579834689073,
+        "longitude": 0.0003705709484469,
+        "project_title": "Agroforestry, sustainable forestry, and reforestation in watersheds in the Toledo District"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.105606, 15.98442] },
+      "properties": {
+        "project#": 19,
+        "district": "Toledo",
+        "location": "Crique Sarco",
+        "latitude": 15.9844197,
+        "longitude": -89.10560593,
+        "project_title": "Agroforestry, sustainable forestry, and reforestation in watersheds in the Toledo District"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.127304, 15.931125] },
+      "properties": {
+        "project#": 19,
+        "district": "Toledo",
+        "location": "Graham Creek",
+        "latitude": 15.93112482,
+        "longitude": -89.12730373,
+        "project_title": "Agroforestry, sustainable forestry, and reforestation in watersheds in the Toledo District"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.566998, 17.338677] },
+      "properties": {
+        "project#": 20,
+        "district": "Belize",
+        "location": "Mahogany Heights",
+        "latitude": 17.338677383808474,
+        "longitude": -88.56699791901623,
+        "project_title": "Climate Adaptation and Protected Areas (CAPA) Initiative: Regeneration of\r\ndegraded areas in the Maya Forest Corridor by planting native trees and opening\r\nfirebreaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.566044, 17.339853] },
+      "properties": {
+        "project#": 20,
+        "district": "Belize",
+        "location": "La Democracia",
+        "latitude": 17.339852702731907,
+        "longitude": -88.56604361664986,
+        "project_title": "Climate Adaptation and Protected Areas (CAPA) Initiative: Regeneration of\r\ndegraded areas in the Maya Forest Corridor by planting native trees and opening\r\nfirebreaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.396068, 17.450359] },
+      "properties": {
+        "project#": 20,
+        "district": "Belize",
+        "location": "Hattieville",
+        "latitude": 17.45035868194932,
+        "longitude": -88.39606758361707,
+        "project_title": "Climate Adaptation and Protected Areas (CAPA) Initiative: Regeneration of\r\ndegraded areas in the Maya Forest Corridor by planting native trees and opening\r\nfirebreaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [0.000464, -0.000348] },
+      "properties": {
+        "project#": 20,
+        "district": "Belize",
+        "location": "Gracie Rock",
+        "latitude": -0.0003483592696578,
+        "longitude": 0.0004635353674733,
+        "project_title": "Climate Adaptation and Protected Areas (CAPA) Initiative: Regeneration of\r\ndegraded areas in the Maya Forest Corridor by planting native trees and opening\r\nfirebreaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.534126, 17.555646] },
+      "properties": {
+        "project#": 20,
+        "district": "Belize",
+        "location": "Bermudian Landing",
+        "latitude": 17.555646224900396,
+        "longitude": -88.53412599087831,
+        "project_title": "Climate Adaptation and Protected Areas (CAPA) Initiative: Regeneration of\r\ndegraded areas in the Maya Forest Corridor by planting native trees and opening\r\nfirebreaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.506492, 17.57052] },
+      "properties": {
+        "project#": 20,
+        "district": "Belize",
+        "location": "Scotland Halfmoon",
+        "latitude": 17.57052006921616,
+        "longitude": -88.50649231759748,
+        "project_title": "Climate Adaptation and Protected Areas (CAPA) Initiative: Regeneration of\r\ndegraded areas in the Maya Forest Corridor by planting native trees and opening\r\nfirebreaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.55905, 17.548631] },
+      "properties": {
+        "project#": 20,
+        "district": "Belize",
+        "location": "Double Head Cabbage",
+        "latitude": 17.548630601147156,
+        "longitude": -88.55904980175056,
+        "project_title": "Climate Adaptation and Protected Areas (CAPA) Initiative: Regeneration of\r\ndegraded areas in the Maya Forest Corridor by planting native trees and opening\r\nfirebreaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.572728, 17.530743] },
+      "properties": {
+        "project#": 20,
+        "district": "Belize",
+        "location": "Willows Bank",
+        "latitude": 17.530742507074386,
+        "longitude": -88.57272770979971,
+        "project_title": "Climate Adaptation and Protected Areas (CAPA) Initiative: Regeneration of\r\ndegraded areas in the Maya Forest Corridor by planting native trees and opening\r\nfirebreaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [0.000439, 1e-5] },
+      "properties": {
+        "project#": 20,
+        "district": "Belize",
+        "location": "St. Paul's bank",
+        "latitude": 9.99471042265835e-6,
+        "longitude": 0.0004394951173309,
+        "project_title": "Climate Adaptation and Protected Areas (CAPA) Initiative: Regeneration of\r\ndegraded areas in the Maya Forest Corridor by planting native trees and opening\r\nfirebreaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.628427, 17.5379] },
+      "properties": {
+        "project#": 20,
+        "district": "Belize",
+        "location": "Rancho Dolores",
+        "latitude": 17.53790030985574,
+        "longitude": -88.62842740358542,
+        "project_title": "Climate Adaptation and Protected Areas (CAPA) Initiative: Regeneration of\r\ndegraded areas in the Maya Forest Corridor by planting native trees and opening\r\nfirebreaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.712551, 17.276298] },
+      "properties": {
+        "project#": 20,
+        "district": "Cayo",
+        "location": "Cotton Tree",
+        "latitude": 17.2762984851799,
+        "longitude": -88.71255068510646,
+        "project_title": "Climate Adaptation and Protected Areas (CAPA) Initiative: Regeneration of\r\ndegraded areas in the Maya Forest Corridor by planting native trees and opening\r\nfirebreaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.634532, 17.255265] },
+      "properties": {
+        "project#": 20,
+        "district": "Cayo",
+        "location": "Franks Eddy",
+        "latitude": 17.25526522728972,
+        "longitude": -88.63453163268451,
+        "project_title": "Climate Adaptation and Protected Areas (CAPA) Initiative: Regeneration of\r\ndegraded areas in the Maya Forest Corridor by planting native trees and opening\r\nfirebreaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.000418, 0.00019] },
+      "properties": {
+        "project#": 21,
+        "district": "Belize",
+        "location": "St. Paul's bank",
+        "latitude": 0.0001900481255974,
+        "longitude": -0.00041776993509,
+        "project_title": "CAPA Initiative: Climate-smart agriculture practices and agroforestry systems in the\r\nBelize River Valley"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.573432, 17.530916] },
+      "properties": {
+        "project#": 21,
+        "district": "Belize",
+        "location": "Willows Bank",
+        "latitude": 17.53091639638718,
+        "longitude": -88.57343163472083,
+        "project_title": "CAPA Initiative: Climate-smart agriculture practices and agroforestry systems in the\r\nBelize River Valley"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.538355, 17.579325] },
+      "properties": {
+        "project#": 21,
+        "district": "Belize",
+        "location": "Isabella Bank",
+        "latitude": 17.579325287727762,
+        "longitude": -88.53835525457876,
+        "project_title": "CAPA Initiative: Climate-smart agriculture practices and agroforestry systems in the\r\nBelize River Valley"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.315545, 17.775078] },
+      "properties": {
+        "project#": 21,
+        "district": "Belize",
+        "location": "Lucky Strike",
+        "latitude": 17.77507829,
+        "longitude": -88.3155455,
+        "project_title": "CAPA Initiative: Climate-smart agriculture practices and agroforestry systems in the\r\nBelize River Valley"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.143642, 18.355145] },
+      "properties": {
+        "project#": 22,
+        "district": "Corozal",
+        "location": "Sarteneja",
+        "latitude": 18.35514507817831,
+        "longitude": -88.14364203080012,
+        "project_title": "CAPA Initiative: Supplementary livelihoods for coastal communities"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.21431, 17.506062] },
+      "properties": {
+        "project#": 22,
+        "district": "Belize",
+        "location": "Belize City",
+        "latitude": 17.50606176674111,
+        "longitude": -88.21431009366859,
+        "project_title": "CAPA Initiative: Supplementary livelihoods for coastal communities"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.220721, 16.959731] },
+      "properties": {
+        "project#": 22,
+        "district": "Stann Creek",
+        "location": "Dangriga",
+        "latitude": 16.959730630760415,
+        "longitude": -88.22072092467697,
+        "project_title": "CAPA Initiative: Supplementary livelihoods for coastal communities"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.282315, 16.852867] },
+      "properties": {
+        "project#": 22,
+        "district": "Stann Creek",
+        "location": "Hopkins",
+        "latitude": 16.852867135461832,
+        "longitude": -88.28231520947112,
+        "project_title": "CAPA Initiative: Supplementary livelihoods for coastal communities"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.310878, 16.689781] },
+      "properties": {
+        "project#": 22,
+        "district": "Stann Creek",
+        "location": "Riversdale",
+        "latitude": 16.689781297029928,
+        "longitude": -88.3108776893726,
+        "project_title": "CAPA Initiative: Supplementary livelihoods for coastal communities"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.365765, 16.578484] },
+      "properties": {
+        "project#": 22,
+        "district": "Stann Creek",
+        "location": "Seine Bight",
+        "latitude": 16.578483790264265,
+        "longitude": -88.36576452967277,
+        "project_title": "CAPA Initiative: Experimental treatment plots for Stony Coral Tissue Loss Disease\r\n(SCTLD) in marine reserves"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.144165, 18.35425] },
+      "properties": {
+        "project#": 23,
+        "district": "Corozal",
+        "location": "Sarteneja",
+        "latitude": 18.354250075137827,
+        "longitude": -88.14416472836042,
+        "project_title": "CAPA Initiative: Experimental treatment plots for Stony Coral Tissue Loss Disease\r\n(SCTLD) in marine reserves"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.214045, 17.506774] },
+      "properties": {
+        "project#": 23,
+        "district": "Belize",
+        "location": "Belize City",
+        "latitude": 17.506774352727,
+        "longitude": -88.21404531454331,
+        "project_title": "CAPA Initiative: Experimental treatment plots for Stony Coral Tissue Loss Disease\r\n(SCTLD) in marine reserves"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.221048, 16.960138] },
+      "properties": {
+        "project#": 23,
+        "district": "Stann Creek",
+        "location": "Dangriga",
+        "latitude": 16.960138366932085,
+        "longitude": -88.221048479061,
+        "project_title": "CAPA Initiative: Experimental treatment plots for Stony Coral Tissue Loss Disease\r\n(SCTLD) in marine reserves"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.283126, 16.853417] },
+      "properties": {
+        "project#": 23,
+        "district": "Stann Creek",
+        "location": "Hopkins",
+        "latitude": 16.853417373284877,
+        "longitude": -88.28312644224582,
+        "project_title": "CAPA Initiative: Experimental treatment plots for Stony Coral Tissue Loss Disease\r\n(SCTLD) in marine reserves"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.3682, 16.517419] },
+      "properties": {
+        "project#": 23,
+        "district": "Stann Creek",
+        "location": "Placencia",
+        "latitude": 16.517419056721703,
+        "longitude": -88.36819986576562,
+        "project_title": "CAPA Initiative: Experimental treatment plots for Stony Coral Tissue Loss Disease\r\n(SCTLD) in marine reserves"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.143829, 18.354712] },
+      "properties": {
+        "project#": 24,
+        "district": "Corozal",
+        "location": "Sarteneja",
+        "latitude": 18.354712097629108,
+        "longitude": -88.14382913081542,
+        "project_title": "CAPA Initiative: Early warning and immediate response to tropical cyclone impact on\r\nreefs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.214065, 17.506167] },
+      "properties": {
+        "project#": 24,
+        "district": "Belize",
+        "location": "Belize City",
+        "latitude": 17.506167013903625,
+        "longitude": -88.21406478996202,
+        "project_title": "CAPA Initiative: Early warning and immediate response to tropical cyclone impact on\r\nreefs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.220982, 16.960321] },
+      "properties": {
+        "project#": 24,
+        "district": "Stann Creek",
+        "location": "Dangriga",
+        "latitude": 16.960320635864832,
+        "longitude": -88.2209817931141,
+        "project_title": "CAPA Initiative: Early warning and immediate response to tropical cyclone impact on\r\nreefs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.282734, 16.852958] },
+      "properties": {
+        "project#": 24,
+        "district": "Stann Creek",
+        "location": "Hopkins",
+        "latitude": 16.852958394296778,
+        "longitude": -88.28273416642678,
+        "project_title": "CAPA Initiative: Early warning and immediate response to tropical cyclone impact on\r\nreefs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.36547, 16.57816] },
+      "properties": {
+        "project#": 24,
+        "district": "Stann Creek",
+        "location": "Seine Bight",
+        "latitude": 16.57816018169959,
+        "longitude": -88.3654696417797,
+        "project_title": "CAPA Initiative: Early warning and immediate response to tropical cyclone impact on\r\nreefs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.311388, 16.689294] },
+      "properties": {
+        "project#": 24,
+        "district": "Stann Creek",
+        "location": "Riversdale",
+        "latitude": 16.689293709887664,
+        "longitude": -88.31138833336253,
+        "project_title": "CAPA Initiative: Early warning and immediate response to tropical cyclone impact on\r\nreefs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.368318, 16.517876] },
+      "properties": {
+        "project#": 24,
+        "district": "Stann Creek",
+        "location": "Placencia",
+        "latitude": 16.517876437443277,
+        "longitude": -88.3683175507947,
+        "project_title": "CAPA Initiative: Early warning and immediate response to tropical cyclone impact on\r\nreefs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.567341, 17.338997] },
+      "properties": {
+        "project#": 25,
+        "district": "Belize",
+        "location": "Mahogany Heights",
+        "latitude": 17.338996997649918,
+        "longitude": -88.56734072307071,
+        "project_title": "Securing and managing land for conservation in the Maya Forest Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.566165, 17.340629] },
+      "properties": {
+        "project#": 25,
+        "district": "Belize",
+        "location": "La Democracia",
+        "latitude": 17.340628978872168,
+        "longitude": -88.56616509057669,
+        "project_title": "Securing and managing land for conservation in the Maya Forest Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.396455, 17.44959] },
+      "properties": {
+        "project#": 25,
+        "district": "Belize",
+        "location": "Hattieville",
+        "latitude": 17.4495895869172,
+        "longitude": -88.39645474194332,
+        "project_title": "Securing and managing land for conservation in the Maya Forest Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.000382, -0.000174] },
+      "properties": {
+        "project#": 25,
+        "district": "Belize",
+        "location": "Gracie Rock",
+        "latitude": -0.0001739907633013,
+        "longitude": -0.0003819448425867,
+        "project_title": "Securing and managing land for conservation in the Maya Forest Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.53369, 17.556334] },
+      "properties": {
+        "project#": 25,
+        "district": "Belize",
+        "location": "Bermudian Landing",
+        "latitude": 17.556333862359846,
+        "longitude": -88.53369042370988,
+        "project_title": "Securing and managing land for conservation in the Maya Forest Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.506537, 17.570271] },
+      "properties": {
+        "project#": 25,
+        "district": "Belize",
+        "location": "Scotland Halfmoon",
+        "latitude": 17.570271182579056,
+        "longitude": -88.50653676228731,
+        "project_title": "Securing and managing land for conservation in the Maya Forest Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.55898, 17.54883] },
+      "properties": {
+        "project#": 25,
+        "district": "Belize",
+        "location": "Double Head Cabbage",
+        "latitude": 17.548830219329336,
+        "longitude": -88.55897959029933,
+        "project_title": "Securing and managing land for conservation in the Maya Forest Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.57302, 17.53092] },
+      "properties": {
+        "project#": 25,
+        "district": "Belize",
+        "location": "Willows Bank",
+        "latitude": 17.53091951954764,
+        "longitude": -88.57302020519013,
+        "project_title": "Securing and managing land for conservation in the Maya Forest Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [0.000406, 0.000268] },
+      "properties": {
+        "project#": 25,
+        "district": "Belize",
+        "location": "St. Paul's Bank",
+        "latitude": 0.0002680094185537,
+        "longitude": 0.0004055041962951,
+        "project_title": "Securing and managing land for conservation in the Maya Forest Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.627859, 17.537774] },
+      "properties": {
+        "project#": 25,
+        "district": "Belize",
+        "location": "Rancho Dolores",
+        "latitude": 17.5377736509836,
+        "longitude": -88.62785890320593,
+        "project_title": "Securing and managing land for conservation in the Maya Forest Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.712459, 17.276609] },
+      "properties": {
+        "project#": 25,
+        "district": "Cayo",
+        "location": "Cotton Tree",
+        "latitude": 17.27660920177248,
+        "longitude": -88.71245936748352,
+        "project_title": "Securing and managing land for conservation in the Maya Forest Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.634399, 17.255153] },
+      "properties": {
+        "project#": 25,
+        "district": "Cayo",
+        "location": "Franks Eddy",
+        "latitude": 17.25515251301099,
+        "longitude": -88.63439945866546,
+        "project_title": "Securing and managing land for conservation in the Maya Forest Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.533718, 17.555823] },
+      "properties": {
+        "project#": 26,
+        "district": "Belize",
+        "location": "Bermudian Landing",
+        "latitude": 17.555823456144022,
+        "longitude": -88.53371767911919,
+        "project_title": "Hurricane Lisa recovery and resilience building in the Community Baboon Sanctuary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [0.000172, -7.7e-5] },
+      "properties": {
+        "project#": 27,
+        "district": "Belize",
+        "location": "St. Paul's bank",
+        "latitude": -7.741300453340482e-5,
+        "longitude": 0.0001721661505535,
+        "project_title": "Restoration of riparian forest in critical areas of the Community Baboon Sanctuary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.487438, 17.600148] },
+      "properties": {
+        "project#": 27,
+        "district": "Belize",
+        "location": "Flowers Bank",
+        "latitude": 17.600148278493222,
+        "longitude": -88.48743841348883,
+        "project_title": "Restoration of riparian forest in critical areas of the Community Baboon Sanctuary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.539032, 17.57928] },
+      "properties": {
+        "project#": 27,
+        "district": "Belize",
+        "location": "Isabella Bank",
+        "latitude": 17.579280219300884,
+        "longitude": -88.5390319955892,
+        "project_title": "Restoration of riparian forest in critical areas of the Community Baboon Sanctuary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [0.00047, 0.00026] },
+      "properties": {
+        "project#": 28,
+        "district": "Belize",
+        "location": "St. Paul's bank",
+        "latitude": 0.0002597073094102,
+        "longitude": 0.0004696375277723,
+        "project_title": "Climate-smart agriculture in the Community Baboon Sanctuary Landscape"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.57317, 17.530278] },
+      "properties": {
+        "project#": 28,
+        "district": "Belize",
+        "location": "Willows Bank",
+        "latitude": 17.53027788000543,
+        "longitude": -88.57317026904998,
+        "project_title": "Climate-smart agriculture in the Community Baboon Sanctuary Landscape"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.559264, 17.549265] },
+      "properties": {
+        "project#": 28,
+        "district": "Belize",
+        "location": "Double Head Cabbage",
+        "latitude": 17.549265360564647,
+        "longitude": -88.55926357011992,
+        "project_title": "Climate-smart agriculture in the Community Baboon Sanctuary Landscape"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.506877, 17.570945] },
+      "properties": {
+        "project#": 28,
+        "district": "Belize",
+        "location": "Scotland Halfmoon",
+        "latitude": 17.570945162160516,
+        "longitude": -88.50687670240919,
+        "project_title": "Climate-smart agriculture in the Community Baboon Sanctuary Landscape"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.533505, 17.556482] },
+      "properties": {
+        "project#": 28,
+        "district": "Belize",
+        "location": "Bermudian Landing",
+        "latitude": 17.556481906956755,
+        "longitude": -88.53350495862404,
+        "project_title": "Climate-smart agriculture in the Community Baboon Sanctuary Landscape"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.538776, 17.579388] },
+      "properties": {
+        "project#": 28,
+        "district": "Belize",
+        "location": "Isabella Bank",
+        "latitude": 17.579388049201526,
+        "longitude": -88.53877638385885,
+        "project_title": "Climate-smart agriculture in the Community Baboon Sanctuary Landscape"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.487358, 17.600242] },
+      "properties": {
+        "project#": 28,
+        "district": "Belize",
+        "location": "Flowers Bank",
+        "latitude": 17.60024175185909,
+        "longitude": -88.4873583075602,
+        "project_title": "Climate-smart agriculture in the Community Baboon Sanctuary Landscape"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.368737, 16.517484] },
+      "properties": {
+        "project#": 29,
+        "district": "Stann Creek",
+        "location": "Placencia",
+        "latitude": 16.51748437467809,
+        "longitude": -88.36873656147732,
+        "project_title": "Strengthening sustainable seaweed mariculture through farming, ecotourism, and\r\nmarketing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.143794, 18.354946] },
+      "properties": {
+        "project#": 30,
+        "district": "Corozal",
+        "location": "Sarteneja",
+        "latitude": 18.354945730537395,
+        "longitude": -88.14379363638564,
+        "project_title": "Harnessing the herbivory potential of king crabs and creating alternative livelihoods for\r\nimproved climate resilience in coral reefs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.214514, 17.506608] },
+      "properties": {
+        "project#": 30,
+        "district": "Belize",
+        "location": "Belize City",
+        "latitude": 17.506607545342597,
+        "longitude": -88.21451438179719,
+        "project_title": "Harnessing the herbivory potential of king crabs and creating alternative livelihoods for\r\nimproved climate resilience in coral reefs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.812104, 16.099409] },
+      "properties": {
+        "project#": 31,
+        "district": "Toledo",
+        "location": "Punta Gorda",
+        "latitude": 16.09940944,
+        "longitude": -88.81210393,
+        "project_title": "Reef health monitoring and capacity building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.214168, 17.506429] },
+      "properties": {
+        "project#": 31,
+        "district": "Belize",
+        "location": "Belize City",
+        "latitude": 17.506428615713745,
+        "longitude": -88.21416825031957,
+        "project_title": "Reef health monitoring and capacity building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.567056, 18.088149] },
+      "properties": {
+        "project#": 31,
+        "district": "Orange Walk",
+        "location": "Orange Walk town",
+        "latitude": 18.0881492,
+        "longitude": -88.567056,
+        "project_title": "Reef health monitoring and capacity building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.355349, 18.32222] },
+      "properties": {
+        "project#": 32,
+        "district": "Corozal",
+        "location": "Copperbank",
+        "latitude": 18.32222041823775,
+        "longitude": -88.35534888742532,
+        "project_title": "Strengthening the capacity of fishing communities to participate in marine conservation\r\nand sustainable resource management"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.356534, 18.29558] },
+      "properties": {
+        "project#": 32,
+        "district": "Corozal",
+        "location": "Chunox",
+        "latitude": 18.295579965547283,
+        "longitude": -88.35653376778664,
+        "project_title": "Strengthening the capacity of fishing communities to participate in marine conservation\r\nand sustainable resource management"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.143795, 18.355086] },
+      "properties": {
+        "project#": 32,
+        "district": "Corozal",
+        "location": "Sarteneja",
+        "latitude": 18.355085785545945,
+        "longitude": -88.14379508738722,
+        "project_title": "Strengthening the capacity of fishing communities to participate in marine conservation\r\nand sustainable resource management"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.973183, 17.910379] },
+      "properties": {
+        "project#": 33,
+        "district": "Belize",
+        "location": "San Pedro",
+        "latitude": 17.91037903984059,
+        "longitude": -87.9731825351736,
+        "project_title": "Active restoration of critically endangered Caribbean coral species in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.028264, 17.76264] },
+      "properties": {
+        "project#": 33,
+        "district": "Belize",
+        "location": "Caye Caulker",
+        "latitude": 17.76264004805875,
+        "longitude": -88.02826387055143,
+        "project_title": "Active restoration of critically endangered Caribbean coral species in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.214111, 17.506794] },
+      "properties": {
+        "project#": 33,
+        "district": "Belize",
+        "location": "Belize City",
+        "latitude": 17.50679363027138,
+        "longitude": -88.21411141136187,
+        "project_title": "Active restoration of critically endangered Caribbean coral species in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.220585, 16.959948] },
+      "properties": {
+        "project#": 33,
+        "district": "Stann Creek",
+        "location": "Dangriga",
+        "latitude": 16.95994819834992,
+        "longitude": -88.22058530815711,
+        "project_title": "Active restoration of critically endangered Caribbean coral species in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.283194, 16.853466] },
+      "properties": {
+        "project#": 33,
+        "district": "Stann Creek",
+        "location": "Hopkins",
+        "latitude": 16.85346558320082,
+        "longitude": -88.28319353536432,
+        "project_title": "Active restoration of critically endangered Caribbean coral species in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.269555, 16.819162] },
+      "properties": {
+        "project#": 33,
+        "district": "Stann Creek",
+        "location": "Sittee River",
+        "latitude": 16.819162079122858,
+        "longitude": -88.26955474916105,
+        "project_title": "Active restoration of critically endangered Caribbean coral species in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.368665, 16.517295] },
+      "properties": {
+        "project#": 33,
+        "district": "Stann Creek",
+        "location": "Placencia",
+        "latitude": 16.51729491133482,
+        "longitude": -88.36866496272181,
+        "project_title": "Active restoration of critically endangered Caribbean coral species in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.365617, 16.578631] },
+      "properties": {
+        "project#": 33,
+        "district": "Stann Creek",
+        "location": "Seine Bight",
+        "latitude": 16.578631339640435,
+        "longitude": -88.36561710585721,
+        "project_title": "Active restoration of critically endangered Caribbean coral species in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.422551, 16.534258] },
+      "properties": {
+        "project#": 33,
+        "district": "Stann Creek",
+        "location": "Independence",
+        "latitude": 16.53425807026701,
+        "longitude": -88.42255086809405,
+        "project_title": "Active restoration of critically endangered Caribbean coral species in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.486612, 16.366116] },
+      "properties": {
+        "project#": 33,
+        "district": "Toledo",
+        "location": "Monkey River",
+        "latitude": 16.36611593193557,
+        "longitude": -88.48661198893606,
+        "project_title": "Active restoration of critically endangered Caribbean coral species in Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.143648, 18.354646] },
+      "properties": {
+        "project#": 34,
+        "district": "Corozal",
+        "location": "Sarteneja",
+        "latitude": 18.354645890172662,
+        "longitude": -88.14364821703703,
+        "project_title": "Expansion of the Shipstern Conservational and Management Area in Northern Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.356587, 18.29595] },
+      "properties": {
+        "project#": 34,
+        "district": "Corozal",
+        "location": "Chunox",
+        "latitude": 18.29594960170365,
+        "longitude": -88.35658653076531,
+        "project_title": "Expansion of the Shipstern Conservational and Management Area in Northern Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.403335, 18.207603] },
+      "properties": {
+        "project#": 34,
+        "district": "Corozal",
+        "location": "Little Belize",
+        "latitude": 18.20760344,
+        "longitude": -88.40333472,
+        "project_title": "Expansion of the Shipstern Conservational and Management Area in Northern Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.243101, 18.059502] },
+      "properties": {
+        "project#": 34,
+        "district": "Corozal",
+        "location": "Neuland",
+        "latitude": 18.05950232,
+        "longitude": -88.24310121,
+        "project_title": "Expansion of the Shipstern Conservational and Management Area in Northern Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.000443, -5.2e-5] },
+      "properties": {
+        "project#": 34,
+        "district": "Corozal",
+        "location": "Fireburn",
+        "latitude": -5.195000755314706e-5,
+        "longitude": -0.0004429876950505,
+        "project_title": "Expansion of the Shipstern Conservational and Management Area in Northern Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.38566, 17.968787] },
+      "properties": {
+        "project#": 34,
+        "district": "Orange Walk",
+        "location": "Santa Martha",
+        "latitude": 17.96878729,
+        "longitude": -88.38566035,
+        "project_title": "Expansion of the Shipstern Conservational and Management Area in Northern Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.541758, 18.01112] },
+      "properties": {
+        "project#": 34,
+        "district": "Orange Walk",
+        "location": "Carmelita",
+        "latitude": 18.0111204,
+        "longitude": -88.5417581,
+        "project_title": "Expansion of the Shipstern Conservational and Management Area in Northern Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.54254, 17.77789] },
+      "properties": {
+        "project#": 34,
+        "district": "Belize",
+        "location": "Crooked Tree Village",
+        "latitude": 17.777889745240397,
+        "longitude": -88.54254015850164,
+        "project_title": "Expansion of the Shipstern Conservational and Management Area in Northern Belize"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.023418, 17.079636] },
+      "properties": {
+        "project#": 35,
+        "district": "Cayo",
+        "location": "San Antonio",
+        "latitude": 17.07963556,
+        "longitude": -89.02341837,
+        "project_title": "Enhancing sustainable management and Indigenous stewardship of the Elijio Panti\r\nNational Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.954584, 17.102514] },
+      "properties": {
+        "project#": 35,
+        "district": "Cayo",
+        "location": "El Progreso Seven Miles",
+        "latitude": 17.10251396,
+        "longitude": -88.95458402,
+        "project_title": "Enhancing sustainable management and Indigenous stewardship of the Elijio Panti\r\nNational Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.055347, 17.129512] },
+      "properties": {
+        "project#": 35,
+        "district": "Cayo",
+        "location": "Criso Rey",
+        "latitude": 17.12951227,
+        "longitude": -89.05534743,
+        "project_title": "Enhancing sustainable management and Indigenous stewardship of the Elijio Panti\r\nNational Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.67294, 17.275484] },
+      "properties": {
+        "project#": 36,
+        "district": "Cayo",
+        "location": "Harmonyville",
+        "latitude": 17.27548366,
+        "longitude": -88.67294027,
+        "project_title": "Building local community capacity for food security and climate adaptation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.773275, 17.87285] },
+      "properties": {
+        "project#": 37,
+        "district": "Orange Walk",
+        "location": "San Felipe",
+        "latitude": 17.872849500713407,
+        "longitude": -88.77327494310096,
+        "project_title": "Rio Bravo Conservation, Sustainable Management, and Climate Action Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.728751, 17.974406] },
+      "properties": {
+        "project#": 37,
+        "district": "Orange Walk",
+        "location": "August Pine Ridge",
+        "latitude": 17.97440565,
+        "longitude": -88.7287511,
+        "project_title": "Rio Bravo Conservation, Sustainable Management, and Climate Action Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [0.000122, 3.1e-5] },
+      "properties": {
+        "project#": 37,
+        "district": "Orange Walk",
+        "location": "Indian Church",
+        "latitude": 3.140680800559721e-5,
+        "longitude": 0.0001222668022571,
+        "project_title": "Rio Bravo Conservation, Sustainable Management, and Climate Action Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [0.000283, 4.4e-5] },
+      "properties": {
+        "project#": 37,
+        "district": "Orange Walk",
+        "location": "San Carlos",
+        "latitude": 4.440037513754136e-5,
+        "longitude": 0.0002830937795885,
+        "project_title": "Rio Bravo Conservation, Sustainable Management, and Climate Action Project"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-88.835132, 16.311446] },
+      "properties": {
+        "project#": 37,
+        "district": "Orange Walk",
+        "location": "Indian Creek",
+        "latitude": 16.31144599675053,
+        "longitude": -88.83513162130723,
+        "project_title": "Rio Bravo Conservation, Sustainable Management, and Climate Action Project"
+      }
+    }
+  ]
+}

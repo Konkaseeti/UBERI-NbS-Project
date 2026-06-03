@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NbS Project Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            padding: 20px;
+            color: #333;
+        }
+        form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h3 {
+            padding-bottom: 8px;
+            margin-top: 30px;
+            color: #2c3e50;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        p {
+            color: #666;
+            font-size: 0.9em;
+            margin: -2px 0 8px 0;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .radio-group {
+            margin: 10px 0;
+        }
+        .radio-group label {
+            display: inline;
+            font-weight: normal;
+            margin-right: 15px;
+        }
+        .inline-group {
+            display: flex;
+            gap: 20px;
+        }
+        .inline-field {
+            flex: 1;
+        }
+    </style>
+    <script>
+        function gettextvalue(id) {
+            return document.getElementById(id).value
+        }
+        function createjson(event) {
+            event.preventDefault();
+            alert("Project Submitted");
+
+            const projectData = {
+                title: gettextvalue("proj_title"),
+                implementationEntity: document.getElementById('implm_ent').value.split(/,|\n/).map(s => s.trim()).filter(Boolean),
+                status: document.querySelector('input[name="project_status"]:checked')?.value || "",
+                timeline: {
+                    from: document.getElementById('stat_from').value,
+                    to: document.getElementById('stat_to').value
+                },
+                locations: {
+                    corozal: document.getElementById('crz_lcts').value.split(',').map(s => s.trim()).filter(Boolean),
+                    orangeWalk: document.getElementById('ogwk_lcts').value.split(',').map(s => s.trim()).filter(Boolean),
+                    belize: document.getElementById('bz_lcts').value.split(',').map(s => s.trim()).filter(Boolean),
+                    cayo: document.getElementById('cy_lcts').value.split(',').map(s => s.trim()).filter(Boolean),
+                    stannCreek: document.getElementById('sc_lcts').value.split(',').map(s => s.trim()).filter(Boolean),
+                    toledo: document.getElementById('tld_lcts').value.split(',').map(s => s.trim()).filter(Boolean)
+                },
+                details: {
+                societalChallenges: document.getElementById('sctl_chlgs').value.split(',').map(s => s.trim()),
+                ecosystemsTargeted: document.getElementById('ecs_tgtd').value.split(',').map(s => s.trim()),
+                servicesEnhanced: document.getElementById('svcs_enh').value.replace(/\n/g,' '),
+                beneficiaries: document.getElementById('proj_benef').value.replace(/\n/g,' ')
+                },
+                description: document.getElementById('proj_desc').value.replace(/\n/g,' '),
+                risks: {
+                climate: document.getElementById('clm_rsk').value.replace(/\n/g,' '),
+                biodiversity: document.getElementById('bio_rsk').value.replace(/\n/g,' ')
+                },
+                references: document.getElementById('prof_refs').value.replace(/\n/g,' ').split(',').map(s => s.trim())
+            }
+            document.getElementById("json_output").value = JSON.stringify(projectData, null, 2)
+            console.log(JSON.stringify(projectData, null, 2))
+        }
+    </script>
+</head>
+<body>
+
+    <form onsubmit="createjson(event)">
+        <label for="proj_title">Project Title</label>
+        <textarea id="proj_title" rows="2" required></textarea>
+        <label for="implm_ent">Implementation Entity</label>
+        <p>Enter Entities separated by commas (e.g., Protected Areas Conservation Trust (PACT),
+            World Wide Fund for Nature (WWF))</p>
+        <textarea id="implm_ent" rows="2" required></textarea>
+
+        <label>Project Status</label>
+        <div class="radio-group">
+            <input type="radio" id="stat_ongoing" name="project_status" value="Ongoing" required>
+            <label for="stat_ongoing">Ongoing</label>
+            <input type="radio" id="stat_completed" name="project_status" value="Completed" required>
+            <label for="stat_completed">Completed</label>
+        </div>
+
+        <div class="inline-group">
+            <div class="inline-field">
+                <label for="stat_from">From</label>
+                <input type="text" id="stat_from" name="stat_from" placeholder="e.g., Jan 2025" required>
+            </div>
+            <div class="inline-field">
+                <label for="stat_to">To</label>
+                <input type="text" id="stat_to" name="stat_to" placeholder="e.g., Present or 2026" required>
+            </div>
+        </div>
+
+        <h3>Project Locations</h3>
+        <p>Enter location names separated by commas (e.g., Corozal Town,Sarteneja)</p>
+        <hr>
+        <label for="crz_lcts">Corozal Locations</label>
+        <input type="text" id="crz_lcts" name="crz_lcts">
+
+        <label for="ogwk_lcts">Orange Walk Locations</label>
+        <input type="text" id="ogwk_lcts" name="ogwk_lcts">
+
+        <label for="bz_lcts">Belize Locations</label>
+        <input type="text" id="bz_lcts" name="bz_lcts">
+
+        <label for="cy_lcts">Cayo Locations</label>
+        <input type="text" id="cy_lcts" name="cy_lcts">
+
+        <label for="sc_lcts">Stann Creek Locations</label>
+        <input type="text" id="sc_lcts" name="sc_lcts">
+
+        <label for="tld_lcts">Toledo Locations</label>
+        <input type="text" id="tld_lcts" name="tld_lcts">
+        <hr>
+
+        <label for="proj_benef">Intended beneficiaries</label>
+        <input type="text" id="proj_benef" name="proj_benef" required>
+        
+        <label for="sctl_chlgs">Societal challenges addressed by NbS</label>
+        <p>Enter challenges separated by commas (e.g., Climate Mitigation,Disaster Risk Reduction)</p>
+        <input type="text" id="sctl_chlgs" name="sctl_chlgs" required>
+
+        <label for="ecs_tgtd">Ecosystem(s) targeted</label>
+        <p>Enter ecosystems separated by commas (e.g., Coral reefs,Beaches)</p>
+        <input type="text" id="ecs_tgtd" name="ecs_tgtd" required>
+
+        <label for="svcs_enh">Ecosystem services enhanced</label>
+        <input type="text" id="svcs_enh" name="svcs_enh" required>
+
+        <label for="proj_desc">Project Description</label>
+        <textarea id="proj_desc" rows="5" required></textarea>
+        
+        <label for="clm_rsk">Climate risks addressed</label>
+        <textarea id="clm_rsk" rows="4" required></textarea>
+
+        <label for="bio_rsk">Biodiversity risks addressed</label>
+        <textarea id="bio_rsk" rows="4" equired></textarea>
+
+        <label for="prof_refs">References</label>
+        <p>Enter references separated by commas</p>
+        <textarea id="prof_refs" rows="4" required></textarea>
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+
+        <hr>
+        <textarea id="json_output" rows="30"></textarea>
+    </form>
+
+    
+</body>
+</html>
