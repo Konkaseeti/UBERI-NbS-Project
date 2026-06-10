@@ -1,0 +1,68 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #e74c3c;
+  --bg-light: #f4f4f4;
+  --header: rgb(121, 166, 0, 1);
+
+  --text-light: #f4f4f4;
+  --text-dark: #2c3e50;
+  --header-bg-color: rgb(51, 157, 255);
+}
+
+#proj_overlay_bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 80vw;
+  height: 93vh;
+  background-color: rgba(187, 187, 187, 0.8);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proj-overlay {
+  position: relative;
+  margin: auto;
+  margin-top: 10px;
+  padding: 0;
+  width: 50%;
+  top: 10px;
+  max-height: 87vh;
+  overflow-y: auto;
+  background-color: var(--bg-light, #ffffff);
+  color: var(--text-dark, #333333);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.info-pane ul {
+  margin-top: 0;
+}
+
+.info-data {
+  padding: 20px;
+  padding-top: 0;
+  margin: 0;
+}
+
+.info-title {
+  background-color: var(--header-bg-color);
+  font-size: 36px;
+  color: var(--text-light);
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.info-loc {
+  padding-bottom: 5px;
+}
+
+ul > h5 {
+  margin: 0;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}

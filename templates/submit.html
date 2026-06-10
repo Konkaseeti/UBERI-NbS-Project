@@ -1,76 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NbS Project Submission</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7f6;
-            padding: 20px;
-            color: #333;
-        }
-        form {
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            max-width: 800px;
-            margin: 0 auto;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        h3 {
-            padding-bottom: 8px;
-            margin-top: 30px;
-            color: #2c3e50;
-        }
-        label {
-            font-weight: bold;
-            display: block;
-            margin-top: 15px;
-            margin-bottom: 5px;
-        }
-        p {
-            color: #666;
-            font-size: 0.9em;
-            margin: -2px 0 8px 0;
-        }
-        input[type="text"], textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-family: inherit;
-        }
-        textarea {
-            resize: vertical;
-        }
-        .radio-group {
-            margin: 10px 0;
-        }
-        .radio-group label {
-            display: inline;
-            font-weight: normal;
-            margin-right: 15px;
-        }
-        .inline-group {
-            display: flex;
-            gap: 20px;
-        }
-        .inline-field {
-            flex: 1;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/css/styles-info-panel.css" />
+    <script src="/static/js/helpers.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        var previewData = null;
+
         function gettextvalue(id) {
             return document.getElementById(id).value
         }
+
         function createjson(event) {
             event.preventDefault();
-            alert("Project Submitted");
 
-            const projectData = {
+            previewData = {
                 title: gettextvalue("proj_title"),
                 implementationEntity: document.getElementById('implm_ent').value.split(/,|\n/).map(s => s.trim()).filter(Boolean),
                 status: document.querySelector('input[name="project_status"]:checked')?.value || "",
@@ -87,26 +35,248 @@
                     toledo: document.getElementById('tld_lcts').value.split(',').map(s => s.trim()).filter(Boolean)
                 },
                 details: {
-                societalChallenges: document.getElementById('sctl_chlgs').value.split(',').map(s => s.trim()),
-                ecosystemsTargeted: document.getElementById('ecs_tgtd').value.split(',').map(s => s.trim()),
-                servicesEnhanced: document.getElementById('svcs_enh').value.replace(/\n/g,' '),
-                beneficiaries: document.getElementById('proj_benef').value.replace(/\n/g,' ')
-                },
-                description: document.getElementById('proj_desc').value.replace(/\n/g,' '),
-                risks: {
-                climate: document.getElementById('clm_rsk').value.replace(/\n/g,' '),
-                biodiversity: document.getElementById('bio_rsk').value.replace(/\n/g,' ')
-                },
-                references: document.getElementById('prof_refs').value.replace(/\n/g,' ').split(',').map(s => s.trim())
+                    societalChallenges: document.getElementById('sctl_chlgs').value.split(',').map(s => s.trim()),
+                    ecosystemsTargeted: document.getElementById('ecs_tgtd').value.split(',').map(s => s.trim()),
+                    servicesEnhanced: document.getElementById('svcs_enh').value.replace(/\n/g, ' '),
+                    beneficiaries: document.getElementById('proj_benef').value.replace(/\n/g, ' '),
+                    climate_risks: document.getElementById('clm_rsk').value.replace(/\n/g, ' '),
+                    biodiversity_risks: document.getElementById('bio_rsk').value.replace(/\n/g, ' '),
+                    description: document.getElementById('proj_desc').value.replace(/\n/g, ' '),
+                    references: document.getElementById('prof_refs').value.replace(/\n/g, ' ').split(',').map(s => s.trim())
+                }
             }
-            document.getElementById("json_output").value = JSON.stringify(projectData, null, 2)
-            console.log(JSON.stringify(projectData, null, 2))
-        }
-    </script>
-</head>
-<body>
+            //document.getElementById("json_output").value = JSON.stringify(projectData, null, 2)
+            console.log(JSON.stringify(previewData, null, 2))
 
-    <form onsubmit="createjson(event)">
+            //document.getElementById("proj_overlay").innerHTML = projectInfoTemplate(projectData)
+
+            checkRemoveElementById("proj_overlay")
+            checkRemoveElementById("preview_control_container");
+
+            var info_panel = document.createElement("div");
+            info_panel.setAttribute("class", "proj-overlay");
+            info_panel.setAttribute("id", "proj_overlay");
+            info_panel.style.marginBottom = "50px";
+            info_panel.innerHTML = "<h2>Preview of Data</h2>" + projectInfoTemplate(previewData);
+            document.body.appendChild(info_panel)
+
+            var control_container = document.createElement("div");
+            control_container.setAttribute("id", "preview_control_container");
+            control_container.style.textAlign = "center";
+            control_container.style.marginBottom = "80px";
+
+            var confirm_button = document.createElement("button");
+            confirm_button.setAttribute("class", "confirm-button control-button")
+            confirm_button.innerHTML = "Looks Good! Submit Entry Directly to Server";
+            confirm_button.addEventListener("click", sendDataToServer);
+
+            var cancel_button = document.createElement("button");
+            cancel_button.setAttribute("class", "cancel-button control-button")
+            cancel_button.innerHTML = "Something's Wrong! Go Back!";
+            cancel_button.addEventListener("click", clearPreview); // MAKE CLEAR PREVIEW FUNCTION
+
+            control_container.appendChild(confirm_button);
+            control_container.appendChild(cancel_button);
+            document.body.appendChild(control_container);
+
+            // Smooth scroll visitor directly down to review the layout section
+            info_panel.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function clearPreview() {
+            console.log("Clear Preview Things")
+            document.getElementById("nbs_submit_form").scrollIntoView({ behavior: 'smooth' });
+            checkRemoveElementById("proj_overlay")
+            checkRemoveElementById("preview_control_container");
+        }
+
+        function sendDataToServer() {
+            if (!previewData) return;
+
+            $.ajax({
+                url: 'submit-pending-project',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(previewData),
+                success: function (response) {
+                    alert("Project successfully submitted for review!");
+                    //document.getElementById("your-form-id").reset(); // Optional form clear
+                },
+                error: function (xhr, status, error) {
+                    console.error("Submission error:", error);
+                    alert("Failed to submit project. Please try again.");
+                }
+            });
+
+
+            console.log("Data Submitted to Server")
+        }
+        /*function createcsv(event) {
+            event.preventDefault();
+            alert("Project Submitted");
+
+            // 1. Define the CSV Headers exactly as requested
+            const headers = [
+                "proj_id", "proj_title", "proj_implementation_entities", "proj_status",
+                "proj_status_from", "proj_status_to", "proj_corozal_locations", "proj_orangewalk_locations",
+                "proj_bellize_locations", "proj_cayo_locations", "proj_stanncreek_locations", "proj_toledo_locations",
+                "proj_societal_challenges", "proj_ecosystems_targeted", "_proj_services_enhanced",
+                "proj_beneficiaries", "proj_description", "proj_climate_risks", "proj_biodiversity_risks", "proj_references"
+            ];
+
+            // Helper function to extract array elements and join them with semicolons (;)
+            const getJoinedList = (id) => {
+                const el = document.getElementById(id);
+                if (!el || !el.value) return "";
+                return el.value.split(/,|\n/).map(s => s.trim()).filter(Boolean).join(";");
+            };
+
+            // Helper function to extract string values, strip newlines, and escape internal double quotes
+            const getStringValue = (id) => {
+                const el = document.getElementById(id);
+                if (!el || !el.value) return "";
+                return el.value.replace(/\r?\n/g, ' ').replace(/"/g, '""').trim();
+            };
+
+            // 2. Map form elements directly to individual CSV data cells
+            const rowData = [
+                "", // proj_id (Leave blank for staging/auto-increment)
+                getStringValue("proj_title"),
+                getJoinedList("implm_ent"),
+                document.querySelector('input[name="project_status"]:checked')?.value || "",
+                document.getElementById('stat_from').value,
+                document.getElementById('stat_to').value,
+                getJoinedList("crz_lcts"),
+                getJoinedList("ogwk_lcts"),
+                getJoinedList("bz_lcts"),
+                getJoinedList("cy_lcts"),
+                getJoinedList("sc_lcts"),
+                getJoinedList("tld_lcts"),
+                getJoinedList("sctl_chlgs"),
+                getJoinedList("ecs_tgtd"),
+                getStringValue("svcs_enh"),
+                getStringValue("proj_benef"),
+                getStringValue("proj_desc"),
+                getStringValue("clm_rsk"),
+                getStringValue("bio_rsk"),
+                getJoinedList("prof_refs")
+            ];
+
+            // 3. Wrap each data cell in double quotes to handle text spaces safely
+            const csvRow = rowData.map(cell => `"${cell}"`).join(",");
+            const csvContent = headers.join(",") + "\n" + csvRow;
+
+            // Output to your textarea/log element
+            const outputElement = document.getElementById("json_output");
+            if (outputElement) {
+                outputElement.value = csvContent;
+            }
+            console.log(csvContent);
+        }*/
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            padding: 20px;
+            color: #333;
+        }
+
+        form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            padding-bottom: 8px;
+            margin-top: 30px;
+            color: #2c3e50;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            color: #666;
+            font-size: 0.9em;
+            margin: -2px 0 8px 0;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .radio-group {
+            margin: 10px 0;
+        }
+
+        .radio-group label {
+            display: inline;
+            font-weight: normal;
+            margin-right: 15px;
+        }
+
+        .inline-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .inline-field {
+            flex: 1;
+        }
+
+        .control-button {
+            padding: 12px 24px;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .confirm-button {
+            background-color: #2ecc71;
+        }
+
+        .cancel-button {
+            background-color: #d04e4e;
+        }
+
+        h2 {
+            text-align: center;
+            background-color: #b2b2b2;
+            padding: 20px 0px;
+            margin: 0;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="nbs_submit_form" onsubmit="createjson(event)">
         <label for="proj_title">Project Title</label>
         <textarea id="proj_title" rows="2" required></textarea>
         <label for="implm_ent">Implementation Entity</label>
@@ -153,11 +323,12 @@
 
         <label for="tld_lcts">Toledo Locations</label>
         <input type="text" id="tld_lcts" name="tld_lcts">
+        <br>
+        <br>
         <hr>
-
         <label for="proj_benef">Intended beneficiaries</label>
         <input type="text" id="proj_benef" name="proj_benef" required>
-        
+
         <label for="sctl_chlgs">Societal challenges addressed by NbS</label>
         <p>Enter challenges separated by commas (e.g., Climate Mitigation,Disaster Risk Reduction)</p>
         <input type="text" id="sctl_chlgs" name="sctl_chlgs" required>
@@ -171,7 +342,7 @@
 
         <label for="proj_desc">Project Description</label>
         <textarea id="proj_desc" rows="5" required></textarea>
-        
+
         <label for="clm_rsk">Climate risks addressed</label>
         <textarea id="clm_rsk" rows="4" required></textarea>
 
@@ -183,12 +354,16 @@
         <textarea id="prof_refs" rows="4" required></textarea>
         <br>
         <br>
-        <input type="submit" value="Submit">
+        <div class="button-container">
+            <input type="submit" value="Submit Preview" class="control-button"
+                style="border: #ccc solid 2px; color: black">
+        </div>
+
 
         <hr>
-        <textarea id="json_output" rows="30"></textarea>
-    </form>
+        <!--<textarea id="json_output" rows="30"></textarea>-->
 
-    
+    </form>
 </body>
+
 </html>

@@ -38,16 +38,14 @@
         "Coral reefs"
       ],
       "servicesEnhanced": "Enhanced natural barrier against storm surges, flood and erosion control, habitat for local species, and opportunities for tourism-related livelihoods.",
-      "beneficiaries": "Residents along the coast of Belize, especially in Dangriga and Hopkins"
-    },
-    "description": "This project is implementing sand renourishment to restore beaches in Dangriga and Hopkins, with the aim of restoring sedimentary balance in the coastal zone and strengthening natural defenses against erosion and extreme weather events. The intervention is guided by bathymetric and sediment studies and complemented by geotube installation to promote the long-term stability of replenished beaches and their benefits. Complementary actions include developing monitoring programs for saltwater intrusion and beach erosion, implementing an early warning system for coastal communities, and promoting awareness and knowledge sharing on beach erosion and restoration. The project also supports capacity building for the implementation of the Integrated Coastal Zone Management Plan. This is a USD 4 million project funded by the Adaptation Fund.",
-    "risks": {
-      "climate": "By strengthening natural defenses along the shoreline, the NbS addresses risks associated with an increased frequency and intensity in hurricanes and storms and sea level rise, including increased coastal flooding and erosion, property damage, death and injury to humans and wildlife, and economic losses for those working in natural resource-dependent industries, such as ecotourism and aquaculture.",
-      "biodiversity": "Biodiversity risks are addressed indirectly (not accounted for in the project design). By stabilizing beaches, the project helps protect coastal and marine habitats, such as seagrass beds and mangroves, which are threatened by sediment loss. Additionally, maintaining healthy beach and dune systems supports biodiversity linked to nesting areas."
-    },
-    "references": [
-      "https://www.adaptation-fund.org/project/enhancing-the-resilience-of-belizes-coastal-communities-to-climate-change-impacts/"
-    ]
+      "beneficiaries": "Residents along the coast of Belize, especially in Dangriga and Hopkins",
+      "description": "This project is implementing sand renourishment to restore beaches in Dangriga and Hopkins, with the aim of restoring sedimentary balance in the coastal zone and strengthening natural defenses against erosion and extreme weather events. The intervention is guided by bathymetric and sediment studies and complemented by geotube installation to promote the long-term stability of replenished beaches and their benefits. Complementary actions include developing monitoring programs for saltwater intrusion and beach erosion, implementing an early warning system for coastal communities, and promoting awareness and knowledge sharing on beach erosion and restoration. The project also supports capacity building for the implementation of the Integrated Coastal Zone Management Plan. This is a USD 4 million project funded by the Adaptation Fund.",
+      "climate_risks": "By strengthening natural defenses along the shoreline, the NbS addresses risks associated with an increased frequency and intensity in hurricanes and storms and sea level rise, including increased coastal flooding and erosion, property damage, death and injury to humans and wildlife, and economic losses for those working in natural resource-dependent industries, such as ecotourism and aquaculture.",
+      "biodiversity_risks": "Biodiversity risks are addressed indirectly (not accounted for in the project design). By stabilizing beaches, the project helps protect coastal and marine habitats, such as seagrass beds and mangroves, which are threatened by sediment loss. Additionally, maintaining healthy beach and dune systems supports biodiversity linked to nesting areas.",
+      "references": [
+        "https://www.adaptation-fund.org/project/enhancing-the-resilience-of-belizes-coastal-communities-to-climate-change-impacts/"
+      ]
+    }
   },
   {
     "project_id": "P0001",
@@ -95,19 +93,17 @@
       ],
       "ecosystemsTargeted": ["Mangrove forests", "Coral reefs"],
       "servicesEnhanced": "Enhanced natural barrier against storm surges, habitat for local species, and income sources for local communities.",
-      "beneficiaries": "Fishers, marine guides, and communities in the indicated areas."
-    },
-    "description": "The Smart Coasts project trained youth in five communities on mangrove restoration and helped to establish a 'Mangrove Community Watchdog' program to protect and restore mangrove forests in northern Belize. The project also supported capacity building, community outreach, and an education campaign on mangrove protection and restoration. Additionally, it contributed to the update of the Placencia Lagoon Management Plan by integrating climate change considerations to ensure sustainable management of the area. Additional activities included coral restoration efforts, establishing and outplanting four coral nurseries in collaboration with the Hol Chan Marine Reserve, and providing training to support future community- based coral restoration projects.",
-    "risks": {
-      "climate": "By restoring mangrove and coral reef ecosystems, the project addresses several climate risks associated with rising sea surface temperatures, sea level rise, ocean acidification, coastal flooding, and hurricanes. These interventions help reduce property damage, death and injury to humans, and economic losses in the tourism and fisheries sectors.",
-      "biodiversity": "Mangrove forests and coral reefs are highly vulnerable to climate change and susceptible to degradation, particularly from development and tourism. By promoting the conservation, restoration and sustainable management of these ecosystems, the project contributes to preventing mangrove loss, supports coral health, and protects the habitats of marine and coastal species."
-    },
-    "references": [
-      "https://wwflac.awsassets.panda.org/downloads/wwf_powering_nature_report.pdf",
-      "https://www.wwfca.org/en/smartcoastsmar/",
-      "https://wwflac.awsassets.panda.org/downloads/corozal_bay.pdf",
-      "https://wwflac.awsassets.panda.org/downloads/ambergris_caye.pdf"
-    ]
+      "beneficiaries": "Fishers, marine guides, and communities in the indicated areas.",
+      "description": "The Smart Coasts project trained youth in five communities on mangrove restoration and helped to establish a 'Mangrove Community Watchdog' program to protect and restore mangrove forests in northern Belize. The project also supported capacity building, community outreach, and an education campaign on mangrove protection and restoration. Additionally, it contributed to the update of the Placencia Lagoon Management Plan by integrating climate change considerations to ensure sustainable management of the area. Additional activities included coral restoration efforts, establishing and outplanting four coral nurseries in collaboration with the Hol Chan Marine Reserve, and providing training to support future community- based coral restoration projects.",
+      "climate_risks": "By restoring mangrove and coral reef ecosystems, the project addresses several climate risks associated with rising sea surface temperatures, sea level rise, ocean acidification, coastal flooding, and hurricanes. These interventions help reduce property damage, death and injury to humans, and economic losses in the tourism and fisheries sectors.",
+      "biodiversity_risks": "Mangrove forests and coral reefs are highly vulnerable to climate change and susceptible to degradation, particularly from development and tourism. By promoting the conservation, restoration and sustainable management of these ecosystems, the project contributes to preventing mangrove loss, supports coral health, and protects the habitats of marine and coastal species.",
+      "references": [
+        "https://wwflac.awsassets.panda.org/downloads/wwf_powering_nature_report.pdf",
+        "https://www.wwfca.org/en/smartcoastsmar/",
+        "https://wwflac.awsassets.panda.org/downloads/corozal_bay.pdf",
+        "https://wwflac.awsassets.panda.org/downloads/ambergris_caye.pdf"
+      ]
+    }
   },
   {
     "project_id": "P0002",
@@ -139,17 +135,15 @@
       ],
       "ecosystemsTargeted": ["Forests", "Freshwater ecosystems"],
       "servicesEnhanced": "Water supply and food and income source for target communities.",
-      "beneficiaries": "Communities living in and around the Mopan and Macal rivers and select protected areas in Belize."
-    },
-    "description": "The core NbS intervention of this project is the restoration of priority watersheds across Belize. This includes developing restoration strategies and carrying out pilot activities in riparian and catchment areas. These actions aim to improve freshwater quality and restore natural ecosystem functions that buffer communities against climate change impacts. Complementary measures include climate-smart food systems and nature-based enterprises, that provide alternative livelihoods while reducing pressure on natural resources, and community-based disaster risk management that incorporates flood mitigation solutions. In addition, the project strengthens local capacities to access climate finance, promoting the long-term scaling and sustainability of the NbS. This is a USD 5 million project financed by the Adaptation Fund.",
-    "risks": {
-      "climate": "By restoring riparian and catchment areas, the project addresses key climate risks associated with droughts and floods. These include reduced water availability and quality, infrastructural damage, and economic losses in the agriculture sector.",
-      "biodiversity": "Forest ecosystems supporting the provision and regulation of freshwater in the selected watersheds are highly susceptible to wildfires, overexploitation, and degradation. Through restoration and community management, the project contributes to reducing these threats and prevents further biodiversity loss and habitat degradation."
-    },
-    "references": [
-      "https://www.pactbelize.org/building-community-resilience-via-transformative-adaptation/",
-      "https://www.adaptation-fund.org/project/building-community-resilience-via-transformative-adaptation-enhance-direct-access/"
-    ]
+      "beneficiaries": "Communities living in and around the Mopan and Macal rivers and select protected areas in Belize.",
+      "description": "The core NbS intervention of this project is the restoration of priority watersheds across Belize. This includes developing restoration strategies and carrying out pilot activities in riparian and catchment areas. These actions aim to improve freshwater quality and restore natural ecosystem functions that buffer communities against climate change impacts. Complementary measures include climate-smart food systems and nature-based enterprises, that provide alternative livelihoods while reducing pressure on natural resources, and community-based disaster risk management that incorporates flood mitigation solutions. In addition, the project strengthens local capacities to access climate finance, promoting the long-term scaling and sustainability of the NbS. This is a USD 5 million project financed by the Adaptation Fund.",
+      "climate_risks": "By restoring riparian and catchment areas, the project addresses key climate risks associated with droughts and floods. These include reduced water availability and quality, infrastructural damage, and economic losses in the agriculture sector.",
+      "biodiversity_risks": "Forest ecosystems supporting the provision and regulation of freshwater in the selected watersheds are highly susceptible to wildfires, overexploitation, and degradation. Through restoration and community management, the project contributes to reducing these threats and prevents further biodiversity loss and habitat degradation.",
+      "references": [
+        "https://www.pactbelize.org/building-community-resilience-via-transformative-adaptation/",
+        "https://www.adaptation-fund.org/project/building-community-resilience-via-transformative-adaptation-enhance-direct-access/"
+      ]
+    }
   },
   {
     "project_id": "P0003",
@@ -204,17 +198,15 @@
         "Mangrove forests"
       ],
       "servicesEnhanced": "Enhanced natural barrier against storm surges, carbon sequestration, habitat for marine species, and livelihood options for local communities.",
-      "beneficiaries": "Fishers, marine guides, and other users of marine resources located within Corozal Bay Wildlife Sanctuary, Turneffe Atoll Marine Reserve, and South Water Caye Marine Reserve."
-    },
-    "description": "This project improved coral reef protection in Belize through the expansion of marine protected areas. In collaboration with NGO partners, the project increased the national coverage of marine protected areas from 13% to 22%, as well as no-take zones from 2% to 3.1%. The project also supported the update of forest regulations, reinforcing the protection of mangroves. Complementary activities included promoting alternative sustainable livelihood options for communities and raising awareness on the importance of reef health for climate resilience and human wellbeing. This project was funded by the World Bank's Adaptation Fund.",
-    "risks": {
-      "climate": "By expanding marine protected areas and reducing local stressors, the project enhances the capacity of coral reefs to withstand heat stress, ocean acidification, and extreme weather events. The protection of mangroves helps dissipate wave energy and stabilize shorelines, reducing communities' vulnerability to sea level rise and storms.",
-      "biodiversity": "By expanding protected areas and no-take zones, the project reduces human pressures associated with habitat degradation and overfishing, allowing marine populations to recover and maintain ecological balance. The protection of mangroves, which serve as nursery grounds for juvenile fish and invertebrates, helps prevent biodiversity loss."
-    },
-    "references": [
-      "https://projects.worldbank.org/en/projects-operations/project-detail/P131408",
-      "https://fisheries.gov.bz/mccap/development/"
-    ]
+      "beneficiaries": "Fishers, marine guides, and other users of marine resources located within Corozal Bay Wildlife Sanctuary, Turneffe Atoll Marine Reserve, and South Water Caye Marine Reserve.",
+      "description": "This project improved coral reef protection in Belize through the expansion of marine protected areas. In collaboration with NGO partners, the project increased the national coverage of marine protected areas from 13% to 22%, as well as no-take zones from 2% to 3.1%. The project also supported the update of forest regulations, reinforcing the protection of mangroves. Complementary activities included promoting alternative sustainable livelihood options for communities and raising awareness on the importance of reef health for climate resilience and human wellbeing. This project was funded by the World Bank's Adaptation Fund.",
+      "climate_risks": "By expanding marine protected areas and reducing local stressors, the project enhances the capacity of coral reefs to withstand heat stress, ocean acidification, and extreme weather events. The protection of mangroves helps dissipate wave energy and stabilize shorelines, reducing communities' vulnerability to sea level rise and storms.",
+      "biodiversity_risks": "By expanding protected areas and no-take zones, the project reduces human pressures associated with habitat degradation and overfishing, allowing marine populations to recover and maintain ecological balance. The protection of mangroves, which serve as nursery grounds for juvenile fish and invertebrates, helps prevent biodiversity loss.",
+      "references": [
+        "https://projects.worldbank.org/en/projects-operations/project-detail/P131408",
+        "https://fisheries.gov.bz/mccap/development/"
+      ]
+    }
   },
   {
     "project_id": "P0004",
@@ -271,15 +263,13 @@
       ],
       "ecosystemsTargeted": ["Forests", "Freshwater ecosystems"],
       "servicesEnhanced": "Pollination, decomposition, water filtration, erosion and flood control, carbon sequestration, and climate regulation.",
-      "beneficiaries": "Local communities in and around the protected area"
-    },
-    "description": "A total of 96,000 hectares of the Selva Maya's tropical forest in northwestern Belize were secured by the BMFT and its partners for permanent protection. This area, representing nearly one-tenth of total land in Belize, contains some of the most biodiverse forests in the world. The BMFT now manages the area sustainably and has assumed responsibility for the Carbon Verra Standard project a climate mitigation project started by the previous landowners. The protection of these ecosystems provides multiple co-benefits for adaptation and biodiversity, including erosion and flood control, and the conservation of critical habitats for key species.",
-    "risks": {
-      "climate": "By protecting a significant area of tropical forest, the local climate can regulate itself more effectively and risks of drought, heat stress, and wildfires are reduced. The conserved forest cover also enhances water retention and prevents erosion and flooding. These functions safeguard water sources and agricultural productivity for surrounding communities.",
-      "biodiversity": "By securing a large and connected forest landscape, the project mitigates biodiversity risks such as habitat fragmentation and degradation driven by land conversion, development, and climate change."
-    },
-    "references": [
-      "https://www.nature.org/en-us/what-we-do/our-insights/perspectives/protecting-belize-maya-forest-biodiversity-climate/"
-    ]
+      "beneficiaries": "Local communities in and around the protected area",
+      "description": "A total of 96,000 hectares of the Selva Maya's tropical forest in northwestern Belize were secured by the BMFT and its partners for permanent protection. This area, representing nearly one-tenth of total land in Belize, contains some of the most biodiverse forests in the world. The BMFT now manages the area sustainably and has assumed responsibility for the Carbon Verra Standard project a climate mitigation project started by the previous landowners. The protection of these ecosystems provides multiple co-benefits for adaptation and biodiversity, including erosion and flood control, and the conservation of critical habitats for key species.",
+      "climate_riskks": "By protecting a significant area of tropical forest, the local climate can regulate itself more effectively and risks of drought, heat stress, and wildfires are reduced. The conserved forest cover also enhances water retention and prevents erosion and flooding. These functions safeguard water sources and agricultural productivity for surrounding communities.",
+      "biodiversity_risks": "By securing a large and connected forest landscape, the project mitigates biodiversity risks such as habitat fragmentation and degradation driven by land conversion, development, and climate change.",
+      "references": [
+        "https://www.nature.org/en-us/what-we-do/our-insights/perspectives/protecting-belize-maya-forest-biodiversity-climate/"
+      ]
+    }
   }
 ]
