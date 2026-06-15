@@ -22,6 +22,10 @@ function addList(objectList) {
   return text_to_list;
 }
 
+function replaceNewLine(text) {
+  if (!text) return "Error: Missing text.";
+  return String(text).replaceAll("*new_line*", "<br><br>");
+}
 function projectInfoTemplate(projObj) {
   var title = '<p class="info-data info-title">' + projObj.title + "</p>";
 
@@ -34,7 +38,9 @@ function projectInfoTemplate(projObj) {
   status = status + "</p>";
 
   var description =
-    '<p class="info-data">' + projObj.details.description + "</p>";
+    '<p class="info-data">' +
+    replaceNewLine(projObj.details.description) +
+    "</p>";
 
   var imp_entity =
     '<h4 class="info-data">Implementation Entities:</h4><ul>' +
@@ -60,7 +66,7 @@ function projectInfoTemplate(projObj) {
   var intended_beneficiaries =
     '<h4 class="info-data">Intended beneficiaries:</h4>' +
     '<p class="info-data">' +
-    projObj.details.beneficiaries +
+    replaceNewLine(projObj.details.beneficiaries) +
     "</p>";
 
   var societal_challenges =
@@ -75,19 +81,19 @@ function projectInfoTemplate(projObj) {
   var ecosystem_svcs_enhanced =
     '<h4 class="info-data">Ecosystem services enhanced:</h4>' +
     '<p class="info-data">' +
-    projObj.details.servicesEnhanced +
+    replaceNewLine(projObj.details.servicesEnhanced) +
     "</p>";
 
   var climate_risks =
     '<h4 class="info-data">Climate risks addressed:</h4>' +
     '<p class="info-data">' +
-    projObj.details.climate_risks +
+    replaceNewLine(projObj.details.climate_risks) +
     "</p>";
 
   var biodiversity_risks =
     '<h4 class="info-data">Biodiversity risks addressed:</h4>' +
     '<p class="info-data">' +
-    projObj.details.biodiversity_risks +
+    replaceNewLine(projObj.details.biodiversity_risks) +
     "</p>";
 
   var references = '<h4 class="info-data">Reference(s):</h4><ul>';

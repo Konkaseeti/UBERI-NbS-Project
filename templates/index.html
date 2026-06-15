@@ -2,31 +2,167 @@
 <html>
 
 <head>
-    <title>NbS-Projects</title>
-    <link rel="stylesheet" href="/static/css/styles.css" />
+    <title>NbS Inventory for Belize</title>
     <link rel="stylesheet" href="/static/css/styles-info-panel.css" />
     <script src="/static/js/helpers.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
     <!-- Leaflet Markers -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
     <script>
-        let dataset = null;
+        let dataset = [];
+
         const FILTER_TYPES = {
             ONGOING: "filter_type_ongoing",
             COMPLETED: "filter_type_completed",
             NAME: "filter_type_name",
             CHALLENGES: "filter_type_challenges",
-            ECOSYSTEMS: "filter_type_ecosystems"
+            ECOSYSTEMS: "filter_type_ecosystems",
+            CHALLENGES: "filter_type_challenges"
         };
+
+        // Converts the CSV text data into a JSON array.
+        function parseCSVtoJSON(csv_text) {
+            const lines = csv_text.trim().split("\n"); // Separate CSV by line into an array.
+            const dataLines = lines.slice(1); // Skip csv header row
+
+            // Return all processed Lines
+            return dataLines.map((line, index) => {
+                let pieces = [];
+                let currentPiece = "";
+                let insideQuotes = false;
+
+                // Loops over each char to split commas while ignoring commas inside quotes.
+                for (let i = 0; i < line.length; i++) {
+                    let char = line[i];
+                    let nextChar = line[i + 1];
+
+                    if (char === '"') {
+                        if (insideQuotes && nextChar === '"') {
+                            currentPiece += '"';
+                            i++;
+                        } else {
+                            insideQuotes = !insideQuotes;
+                        }
+                    } else if (char === ',' && !insideQuotes) {
+                        pieces.push(currentPiece.trim());
+                        currentPiece = "";
+                    } else {
+                        currentPiece += char;
+                    }
+                }
+                pieces.push(currentPiece.trim());
+
+                // Helper function to turn comma-separated strings into clean arrays
+                // If string exists, split,trim and remove empty items, else return empty array
+                const splitToArray = (str) => str ? str.split(",").map(item => item.trim()).filter(Boolean) : [];
+
+                // Build JSON object using the processed CSV pieces
+                return {
+                    project_id: `P${String(index + 1).padStart(4, '0')}`, // Dynamically generates the project ID;  P0001, P0002, ... used later to map points on the map.
+                    title: pieces[0],
+                    implementationEntity: splitToArray(pieces[4]),
+                    status: pieces[1],
+                    timeline: {
+                        from: pieces[2] || "",
+                        to: pieces[3] || ""
+                    },
+                    locations: {
+                        corozal: splitToArray(pieces[13]),
+                        orangeWalk: splitToArray(pieces[14]),
+                        belize: splitToArray(pieces[15]),
+                        cayo: splitToArray(pieces[16]),
+                        stannCreek: splitToArray(pieces[17]),
+                        toledo: splitToArray(pieces[18])
+                    },
+                    details: {
+                        societalChallenges: pieces[7] ? JSON.parse(pieces[7]) : [],
+                        ecosystemsTargeted: splitToArray(pieces[8]),
+                        servicesEnhanced: pieces[9] || "",
+                        beneficiaries: pieces[5] || "",
+                        description: pieces[6] || "",
+                        climate_risks: pieces[10] || "",
+                        biodiversity_risks: pieces[11] || "",
+                        references: splitToArray(pieces[12])
+                    }
+                };
+                //console.log(JSON.stringify(obj, null, 2));
+            });
+        }
+
+        function createProjectCards(obj) {
+            var proj_card = document.createElement("div");
+            proj_card.setAttribute("id", "nbs_info_" + obj.project_id);
+            proj_card.setAttribute("class", "proj_card");
+            proj_card.setAttribute("data-original", obj.project_id);
+            //proj_card.projectData = obj; // Stores the project info object as a hidden property to be used by other functions
+            proj_card.addEventListener('click', function () {
+                var projectData = this.projectData;
+                showProjectInfo(obj);
+                filterMarkersByProperty("project_id", obj.project_id);
+                console.log(obj);
+            });
+
+            var title_p = document.createElement("p");
+            title_p.innerHTML = "<strong>" + obj.title + "</strong>";
+            proj_card.appendChild(title_p);
+
+            var proj_status = document.createElement("div");
+            var status_p = document.createElement("p");
+            status_p.textContent = "Status: " + obj.status;
+            proj_status.appendChild(status_p);
+            proj_card.appendChild(proj_status);
+
+            let eco_list = document.createElement("div");
+            eco_list.setAttribute("class", "summary-list")
+            obj.details?.ecosystemsTargeted.forEach(eco => {
+
+                let eco_mem = document.createElement("div");
+                eco_mem.innerText = eco;
+                eco_mem.setAttribute("class", "list-member")
+                eco_list.appendChild(eco_mem)
+                console.log(eco)
+            })
+            proj_card.appendChild(eco_list)
+
+            let chall_list = document.createElement("div");
+            chall_list.setAttribute("class", "summary-list")
+            obj.details?.societalChallenges.forEach(chall => {
+
+                let chall_mem = document.createElement("div");
+                chall_mem.innerText = chall;
+                chall_mem.setAttribute("class", "list-member")
+                chall_list.appendChild(chall_mem)
+                console.log(chall)
+
+            })
+            proj_card.appendChild(chall_list)
+
+            document.getElementById("proj_card_display").appendChild(proj_card);
+        }
+
+        // Get the NbS_submissions_clean file to begin the conversion from CSV to JSON
+        function fetchLocalFiles() {
+            fetch("/static/data/NbS_submissions_clean.csv")
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.text();
+                })
+                .then((data) => {
+                    dataset = parseCSVtoJSON(data);
+                    renderCards(dataset)
+                })
+                .catch((error) => console.error("Error loading GeoJSON:", error));
+        }
 
         function createExpandableSection(card, label, items) {
             if (!items || items.length === 0) return;
@@ -53,89 +189,30 @@
             $(card).append(section);
         }
 
-        function createProjectCards(obj) {
-            var proj_card = document.createElement("div");
-            proj_card.setAttribute("id", "nbs_info_" + obj.project_id);
-            proj_card.setAttribute("class", "proj_card");
-            proj_card.setAttribute("data-original", obj.project_id);
-
-            proj_card.projectData = obj;
-
-            proj_card.addEventListener('click', function () {
-                var projectData = this.projectData;
-                showProjectInfo(projectData);
-                filterMarkersByProperty("project_id", projectData.project_id);
-                console.log(projectData);
-            });
-
-
-            var title_p = document.createElement("p");
-            title_p.innerHTML = "<strong>" + obj.title + "</strong>";
-            proj_card.appendChild(title_p);
-            document.getElementById("proj_card_display").appendChild(proj_card);
-
-            var proj_status = document.createElement("div");
-            var status_p = document.createElement("p");
-            status_p.textContent = "Status: " + obj.status;
-            proj_status.appendChild(status_p);
-            proj_card.appendChild(proj_status);
-
-            let eco_list = document.createElement("div");
-            eco_list.setAttribute("class", "summary-list")
-            obj.details?.ecosystemsTargeted.forEach(eco => {
-
-                let eco_mem = document.createElement("div");
-                eco_mem.innerText = eco;
-                eco_mem.setAttribute("class", "list-member")
-                eco_list.appendChild(eco_mem)
-                console.log(eco)
-
-            })
-
-            $(proj_card).append(eco_list);
-
-            //createExpandableSection(proj_card, "Challenges", obj.details?.societalChallenges);
-            //createExpandableSection(proj_card, "Ecosystems", obj.details?.ecosystemsTargeted);
-        }
-
         function showProjectInfo(projObj) {
             checkRemoveElementById("proj_overlay_bg")
             var proj_info_overlay_bg = document.createElement("div")
             proj_info_overlay_bg.setAttribute("id", "proj_overlay_bg")
-            $(proj_info_overlay_bg).on('click', function () {
-                checkRemoveElementById("proj_overlay_bg")
-            })
+            proj_info_overlay_bg.addEventListener('click', function () {
+                checkRemoveElementById("proj_overlay_bg");
+            });
+
             var proj_info_overlay = document.createElement("div")
             proj_info_overlay.setAttribute("class", "proj-overlay")
             proj_info_overlay.setAttribute("id", "proj_overlay")
-            $(proj_info_overlay).on('click', function (e) {
+            proj_info_overlay.addEventListener('click', function (e) {
                 e.stopPropagation();
-            })
-            //$.each(projObj, function(key,value) {
-            // FORMAT THE PROJECT DATA HERE =========================
+            });
+
             var info_pane = document.createElement("div")
             info_pane.setAttribute("class", "info-pane")
             info_pane.innerHTML = projectInfoTemplate(projObj)
-            $(proj_info_overlay).append(info_pane);
-            // ======================================================
-            //})
-            //console.log (projObj) // REMOVE BEFORE FINISH
+            proj_info_overlay.appendChild(info_pane)
+
             var map_area = document.getElementById("leaflet_map_container");
-            $(map_area).append(proj_info_overlay_bg);
-            $(proj_info_overlay_bg).append(proj_info_overlay);
+            map_area.appendChild(proj_info_overlay_bg)
+            proj_info_overlay_bg.appendChild(proj_info_overlay)
         }
-
-        $(document).ready(function () {
-            $.getJSON('/project-data', function (data) {
-                dataset = data;
-                $.each(data, function (key, value) {
-                    createProjectCards(value)
-                });
-            }).fail(function (error) {
-                console.error("Error fetching data:", error);
-            });
-        });
-
 
         // This Section is for filtering the sidebar Cards===========================================
         function renderCards(data) {
@@ -144,6 +221,11 @@
             Object.entries(data).forEach(([key, value]) => {
                 createProjectCards(value)
             })
+
+            // Hides the loader once all the cards are made
+            $("#sidebar_loader").fadeOut("slow");
+            document.getElementById("sidebar_container").style.overflowY = "scroll";
+
         }
         function reloadCards() {
             renderCards(dataset)
@@ -198,10 +280,10 @@
                 const arrayToSearch = project.details?.[propName] || [];
                 return arrayToSearch.some(item => item.toLowerCase().includes(searchText));
             });
-
-            $.each(filtered_dataset, function (key, value) {
+            filtered_dataset.forEach(function (value) {
                 createProjectCards(value);
             });
+
         }
         function updateFilterByString(text) {
             if (text === "") {
@@ -216,16 +298,18 @@
             } else if (pFilterType === FILTER_TYPES.ECOSYSTEMS) {
                 filterCardsByStringArrayProperty("ecosystemsTargeted", pFilterText) // WIP MAKE SURE THIS WORKS
             }
-            // Most Societal Challenges seem to be the same list so Filtering might be kinda useless======================
-            /*else if (pFilterType === FILTER_TYPES.CHALLENGES) {
+            else if (pFilterType === FILTER_TYPES.CHALLENGES) {
                 filterCardsByStringArrayProperty("societalChallenges", pFilterText) // WIP MAKE SURE THIS WORKS
-            } */
+            }
 
 
         }
         // ==========================================================================================
+
+
     </script>
     <style>
+        /*root colors need to be cleaned up*/
         :root {
             --primary-color: #3498db;
             --secondary-color: #2ecc71;
@@ -236,12 +320,49 @@
             --text-light: #f4f4f4;
             --text-dark: #2c3e50;
             --header-bg-color: rgb(51, 157, 255);
+            --eri-purple: rgb(123, 45, 145);
         }
 
         body {
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        /*Sidebar Loader*/
+        .sidebar-overlay {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--eri-purple);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 10px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /*Project Cards*/
         #proj_card_display {
             display: flex;
             flex-direction: column;
@@ -296,36 +417,6 @@
             margin-top: 8px;
         }
 
-        .summary-line {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 500;
-        }
-
-        .expand-btn {
-            font-weight: bold;
-            background: #e8f4fd;
-            color: #007bff !important;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.85em;
-            transition: background 0.2s;
-        }
-
-        .expand-btn:hover {
-            background: #d0e7ff;
-        }
-
-        .full-list {
-            color: #555555;
-            padding-left: 20px !important;
-        }
-
-        .full-list li {
-            margin-bottom: 4px;
-        }
-
         #map {
             height: inherit;
         }
@@ -341,9 +432,6 @@
 
         .header-bar-block {
             margin: 0px 20px;
-            /*REMOVE BORDER LATER*/
-            /*border: solid 2px black;*/
-
         }
 
         /*Helpers*/
@@ -353,7 +441,7 @@
     </style>
 </head>
 
-<body style="width: 100%; margin: 0;">
+<body style="width: 100%; margin: 0;" onload="fetchLocalFiles()">
     <div class="header-bar-container">
         <div class="header-bar" style="display: flex;">
             <div class="header-bar-block">
@@ -368,8 +456,8 @@
                         <option value="filter_type_name">Name</option>
                         <option value="filter_type_ongoing">Ongoing</option>
                         <option value="filter_type_completed">Completed</option>
-                        <option value="filter_type_ecosystems">Eosystems Targeted</option>
-                        <!--<option value="filter_type_challenges">Societal Challenges</option>-->
+                        <option value="filter_type_ecosystems">Eosystem Targeted</option>
+                        <option value="filter_type_challenges">Societal Challenge</option>
                     </select>
                     <input type="text" id="p_filter" name="p_filter" list="filter_options"
                         onkeyup="updateFilterByString(this.value)">
@@ -377,23 +465,25 @@
             </div>
         </div>
     </div>
-
     <div style="height:93vh; width: 100vw; display: flex;">
 
-
-        <div style="margin: 0; padding:0; height: 100%;flex: 1; overflow-y:scroll">
+        <div id="sidebar_container" style="margin: 0; padding:0; height: 100%;flex: 1; overflow-y:hidden">
+            <div id="sidebar_loader" class="sidebar-overlay">
+                <div class="loader"></div>
+            </div>
             <div id="proj_card_display"></div>
         </div>
+
         <div id="leaflet_map_container" style="margin: 0; padding:0; height: 100%;flex: 4; position: relative">
             <div id="map"></div>
         </div>
-
     </div>
+    <!--Script for loading the map and its markers-->
     <script>
         var map = L.map("map").setView([17.097111994309312, -88.71966058916018], 8);
         var markers;
         var geoJsonData;
-        fetch("/static/NbS_locations.geojson")
+        fetch("/static/data/NbS_locations.geojson")
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
