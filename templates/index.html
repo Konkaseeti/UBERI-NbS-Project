@@ -18,20 +18,36 @@
 
     <script>
         let dataset = [];
+        let markers;
+        let geojson_features = {};
+        let project_count = 0;
+
 
         const FILTER_TYPES = {
             ONGOING: "filter_type_ongoing",
             COMPLETED: "filter_type_completed",
             NAME: "filter_type_name",
             CHALLENGES: "filter_type_challenges",
-            ECOSYSTEMS: "filter_type_ecosystems",
-            CHALLENGES: "filter_type_challenges"
+            ECOSYSTEMS: "filter_type_ecosystems"
         };
+
+        // Helper to fech local files
+        function fetchFile(filename) {
+            return fetch("/static/data/" + filename)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.text();
+                })
+                .catch((error) => console.error("Error loading GeoJSON:", error));
+        }
 
         // Converts the CSV text data into a JSON array.
         function parseCSVtoJSON(csv_text) {
             const lines = csv_text.trim().split("\n"); // Separate CSV by line into an array.
             const dataLines = lines.slice(1); // Skip csv header row
+            project_count = dataLines.length;
 
             // Return all processed Lines
             return dataLines.map((line, index) => {
@@ -62,7 +78,7 @@
 
                 // Helper function to turn comma-separated strings into clean arrays
                 // If string exists, split,trim and remove empty items, else return empty array
-                const splitToArray = (str) => str ? str.split(",").map(item => item.trim()).filter(Boolean) : [];
+                const splitToArray = (str) => str ? str.split(",").map(item => item.trim().replace(/[\r\n]+/g, "")).filter(Boolean) : [];
 
                 // Build JSON object using the processed CSV pieces
                 return {
@@ -97,7 +113,7 @@
             });
         }
 
-        function createProjectCards(obj) {
+        function createProjectCards(obj, fragment) {
             var proj_card = document.createElement("div");
             proj_card.setAttribute("id", "nbs_info_" + obj.project_id);
             proj_card.setAttribute("class", "proj_card");
@@ -107,7 +123,7 @@
                 var projectData = this.projectData;
                 showProjectInfo(obj);
                 filterMarkersByProperty("project_id", obj.project_id);
-                console.log(obj);
+                //console.log(obj);
             });
 
             var title_p = document.createElement("p");
@@ -128,7 +144,6 @@
                 eco_mem.innerText = eco;
                 eco_mem.setAttribute("class", "list-member")
                 eco_list.appendChild(eco_mem)
-                console.log(eco)
             })
             proj_card.appendChild(eco_list)
 
@@ -140,28 +155,19 @@
                 chall_mem.innerText = chall;
                 chall_mem.setAttribute("class", "list-member")
                 chall_list.appendChild(chall_mem)
-                console.log(chall)
-
             })
             proj_card.appendChild(chall_list)
 
-            document.getElementById("proj_card_display").appendChild(proj_card);
+            fragment.appendChild(proj_card);
         }
 
-        // Get the NbS_submissions_clean file to begin the conversion from CSV to JSON
-        function fetchLocalFiles() {
-            fetch("/static/data/NbS_submissions_clean.csv")
-                .then((response) => {
-                    if (!response.ok) {
-                        throw new Error("Network response was not ok");
-                    }
-                    return response.text();
-                })
-                .then((data) => {
-                    dataset = parseCSVtoJSON(data);
-                    renderCards(dataset)
-                })
-                .catch((error) => console.error("Error loading GeoJSON:", error));
+        // Fetch location_coordinates.csv and map it to a JSON array
+        function buildProjectCardSideBar() {
+            return fetchFile("NbS_submissions_clean.csv").then((data) => {
+                dataset = parseCSVtoJSON(data).filter(Boolean);
+                renderCards(dataset);
+                document.getElementById("project_count_block").textContent = project_count + " Projects recorded"
+            })
         }
 
         function createExpandableSection(card, label, items) {
@@ -218,95 +224,132 @@
         function renderCards(data) {
             var proj_cards = document.getElementById("proj_card_display");
             proj_cards.innerHTML = "";
-            Object.entries(data).forEach(([key, value]) => {
-                createProjectCards(value)
-            })
-
+            const fragment = document.createDocumentFragment();
+            data.forEach(project => createProjectCards(project, fragment))
+            document.getElementById("proj_card_display").appendChild(fragment);
             // Hides the loader once all the cards are made
             $("#sidebar_loader").fadeOut("slow");
             document.getElementById("sidebar_container").style.overflowY = "scroll";
-
         }
         function reloadCards() {
             renderCards(dataset)
         }
-        // SOME WAY TO SIMPLIFY OR MERGE FILTER FUNCTIONS SO THERE ARENT SO MANY.
-        function filterCardsBySimpleProperty(propName, propFilter) {
-            renderCards(dataset.filter(project => project[propName] === propFilter))
+
+        function getFilteredDataset(type, textValue) {
+            if (!textValue || textValue.trim() === "") return dataset;
+
+            const search = textValue.trim().toLowerCase();
+
+            return dataset.filter(project => {
+                switch (type) {
+                    case FILTER_TYPES.ONGOING:
+                        return project.status === "Ongoing";
+                    case FILTER_TYPES.COMPLETED:
+                        return project.status === "Completed";
+                    case FILTER_TYPES.NAME:
+                        return project.title?.toLowerCase().includes(search);
+                    case FILTER_TYPES.ECOSYSTEMS:
+                        return (project.details?.ecosystemsTargeted || []).some(item => item.toLowerCase().includes(search));
+                    case FILTER_TYPES.CHALLENGES:
+                        return (project.details?.societalChallenges || []).some(item => item.toLowerCase().includes(search));
+                    default:
+                        return true;
+                }
+            });
         }
-        // WORK IN PROGRESS ===========================
-        function filterCardsByDetailArrayProperty(propName, propFilter) {
-            renderCards(dataset.filter(project => project.details?.[propName]?.includes(propFilter)))
-        }
-        // ============================================
-        function filterCardsByStatus(status) { filterCardsBySimpleProperty("status", status) }
-        // WORK IN PROGRESS ===========================
-        function filterCardsByEcoTgt(ecosystem) { filterCardsByDetailArrayProperty("ecosystemsTargeted", ecosystem) }
-        // ============================================
+
         function updateFilterOption(option) {
             const pFilter = document.getElementById("p_filter");
             const isStatusFilter = option === FILTER_TYPES.ONGOING || option === FILTER_TYPES.COMPLETED;
 
             pFilter.classList.toggle("hidden-filter", isStatusFilter);
-            pFilter.value = ""
+            pFilter.value = "";
 
-            switch (option) {
-                case FILTER_TYPES.ONGOING:
-                    filterCardsByStatus("Ongoing");
-                    break;
-                case FILTER_TYPES.COMPLETED:
-                    filterCardsByStatus("Completed");
-                    break;
-                default:
-                    reloadCards()
-                    break;
-            }
+            const results = getFilteredDataset(option, isStatusFilter ? "status_mode" : "");
+            renderCards(results);
         }
-        function filterCardsByStringProperty(propName, propFilter) {
-            var proj_cards = document.getElementById("proj_card_display");
-            proj_cards.innerHTML = "";
 
-            const filtered_dataset = dataset.filter(project => project[propName]?.toLowerCase().includes(propFilter.toLowerCase()))
-            $.each(filtered_dataset, function (key, value) {
-                createProjectCards(value)
-            });
-        }
-        function filterCardsByStringArrayProperty(propName, propFilter) {
-            var proj_cards = document.getElementById("proj_card_display");
-            proj_cards.innerHTML = "";
-            const searchText = propFilter.trim().toLowerCase();
-
-            const filtered_dataset = dataset.filter(project => {
-                const arrayToSearch = project.details?.[propName] || [];
-                return arrayToSearch.some(item => item.toLowerCase().includes(searchText));
-            });
-            filtered_dataset.forEach(function (value) {
-                createProjectCards(value);
-            });
-
-        }
         function updateFilterByString(text) {
-            if (text === "") {
-                reloadCards()
-                return;
-            }
             const pFilterType = document.getElementById("p_filter_type").value;
-            const pFilterText = text.trim();
-            if (pFilterText === "") return;
-            if (pFilterType === FILTER_TYPES.NAME) {
-                filterCardsByStringProperty("title", pFilterText)
-            } else if (pFilterType === FILTER_TYPES.ECOSYSTEMS) {
-                filterCardsByStringArrayProperty("ecosystemsTargeted", pFilterText) // WIP MAKE SURE THIS WORKS
-            }
-            else if (pFilterType === FILTER_TYPES.CHALLENGES) {
-                filterCardsByStringArrayProperty("societalChallenges", pFilterText) // WIP MAKE SURE THIS WORKS
-            }
-
-
+            const results = getFilteredDataset(pFilterType, text);
+            renderCards(results);
         }
-        // ==========================================================================================
 
+        // Fetch location_coordinates.csv and map it to a JSON array
+        const clean_exclusions = ["corozal town"]
+        function buildGeoJSON() {
+            return fetchFile("location_coordinates.csv").then((data) => {
+                const lines = data.trim().split("\n");
+                const coord_dict = {};
+                // Loop through each line of the CSV file
+                lines.slice(1).forEach(line => {
+                    const values = line.split(",");
+                    if (values.length < 4) return; // Skip broken rows
+                    const district = values[0].trim().toLowerCase();
+                    const locationName = values[1].trim();
+                    const lat = parseFloat(values[2]);
+                    const long = parseFloat(values[3]);
+                    // If coordinates are valid numbers and not zeros, save them
+                    // This will remove any location that has 0,0 for latlong in location_coordinates.csv
+                    if (!isNaN(lat) && !isNaN(long) && (lat !== 0 || long !== 0)) {
+                        const lower_loc = locationName.toLowerCase();
+                        let lookup_Key;
+                        // exclusion check and key creation
+                        if (clean_exclusions.some(ex => lower_loc.includes(ex))) {
+                            lookup_Key = `${district.replace(/[^a-z0-9]/g, '')}_${lower_loc.replace(/[^a-z0-9]/g, '')}`;
+                        } else {
+                            // Normal cleanup rules for everything else
+                            const cleanLoc = lower_loc.replace(/\s+village\s*|\s+town\s*/g, '').replace(/[^a-z0-9]/g, '');
+                            lookup_Key = `${district.replace(/[^a-z0-9]/g, '')}_${cleanLoc}`;
+                        }
+                        coord_dict[lookup_Key] = { lat, long, originalName: locationName };
+                    }
+                });
+                // Loop through loaded project list
+                const features = [];
+                dataset.forEach(project => {
+                    // Loop through each district inside the current project's location list
+                    Object.entries(project.locations).forEach(([district, locations]) => {
+                        const cleanDistKey = district.toLowerCase();
+                        // Loop through every location name inside that district
+                        locations.forEach(locName => {
+                            const lower_loc = locName.toLowerCase();
+                            let clean_loc_key;
 
+                            // exclusion check and key lookup
+                            if (clean_exclusions.some(ex => lower_loc.includes(ex))) {
+                                clean_loc_key = lower_loc.replace(/[^a-z0-9]/g, '');
+                            } else {
+                                clean_loc_key = lower_loc.replace(/\s+village\s*|\s+town\s*/g, '').replace(/[^a-z0-9]/g, '');
+                            }
+
+                            const match = coord_dict[`${cleanDistKey}_${clean_loc_key}`];
+                            // If match found, build the map marker object
+                            if (match) {
+                                features.push({
+                                    type: "Feature",
+                                    geometry: { type: "Point", coordinates: [match.long, match.lat] },
+                                    properties: {
+                                        project_id: project.project_id,
+                                        district: district,
+                                        location: match.originalName,
+                                        project_title: project.title,
+                                    }
+                                });
+                            }
+                        });
+                    });
+                });
+                geojson_features.features = features;
+                loadDefaultMap();
+            });
+        }
+
+        function initData() {
+            buildProjectCardSideBar().then(() => {
+                buildGeoJSON()
+            })
+        }
     </script>
     <style>
         /*root colors need to be cleaned up*/
@@ -441,7 +484,7 @@
     </style>
 </head>
 
-<body style="width: 100%; margin: 0;" onload="fetchLocalFiles()">
+<body style="width: 100%; margin: 0;" onload="initData()">
     <div class="header-bar-container">
         <div class="header-bar" style="display: flex;">
             <div class="header-bar-block">
@@ -463,6 +506,9 @@
                         onkeyup="updateFilterByString(this.value)">
                 </div>
             </div>
+            <div class="header-bar-block">
+                <H2 style="margin: 0; padding: 10px; color: white;" id="project_count_block">0 ammount of projects</H2>
+            </div>
         </div>
     </div>
     <div style="height:93vh; width: 100vw; display: flex;">
@@ -481,28 +527,20 @@
     <!--Script for loading the map and its markers-->
     <script>
         var map = L.map("map").setView([17.097111994309312, -88.71966058916018], 8);
-        var markers;
-        var geoJsonData;
-        fetch("/static/data/NbS_locations.geojson")
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("Network response was not ok");
-                }
-                return response.json();
-            })
-            .then((data) => {
-                geoJsonData = data;
-                loadDefaultMap();
-            })
-            .catch((error) => console.error("Error loading GeoJSON:", error));
 
-        // Adds all markers from geoJsonData to the map.
+        map.on('click', function (e) {
+            var lat = e.latlng.lat;
+            var lng = e.latlng.lng;
+            console.log("Latitude: " + lat + ", Longitude: " + lng);
+        });
+
+        // Adds all markers from geojson_features to the map.
         function loadDefaultMap() {
             markers = L.markerClusterGroup({
                 disableClusteringAtZoom: 15,
                 showCoverageOnHover: false
             });
-            var geoJsonLayer = L.geoJSON(geoJsonData, {
+            var geoJsonLayer = L.geoJSON(geojson_features, {
                 onEachFeature: function (feature, layer) {
                     layer.bindPopup('<p>' + feature.properties.project_title + ' ' + feature.properties.district + ' ' + feature.properties.location + '</p>');
                 }
@@ -510,7 +548,7 @@
             markers.addLayer(geoJsonLayer);
             map.addLayer(markers);
         }
-        // Clears the markers from the Map and then re-adds all markers from geoJsonData to the map.
+        // Clears the markers from the Map and then re-adds all markers from geojson_features to the map.
         function refreshMap() {
             markers.clearLayers();
             loadDefaultMap();
@@ -528,12 +566,11 @@
                 disableClusteringAtZoom: 15,
                 showCoverageOnHover: false
             });
-            var geoJsonLayer = L.geoJSON(geoJsonData, {
+            var geoJsonLayer = L.geoJSON(geojson_features, {
                 filter: function (feature) {
                     return feature.properties[propName].toString().toLowerCase() === propVal.toString().toLowerCase();
                 },
                 onEachFeature: function (feature, layer) {
-
                     layer.bindPopup('<p>' + feature.properties.project_title + ' ' + feature.properties.district + ' ' + feature.properties.location + '</p>');
                 }
             });

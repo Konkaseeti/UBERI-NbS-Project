@@ -98,8 +98,17 @@ function projectInfoTemplate(projObj) {
 
   var references = '<h4 class="info-data">Reference(s):</h4><ul>';
   projObj.details.references.forEach((r) => {
-    references =
-      references + '<li><a href="' + r + '" target="_blank">' + r + "</a></li>";
+    if (String(r).includes("https")) {
+      references =
+        references +
+        '<li><a href="' +
+        r +
+        '" target="_blank">' +
+        r +
+        "</a></li>";
+    } else {
+      references = references + "<li><p" + r + ">" + r + "</p></li>";
+    }
   });
   references = references + "</ul>";
 
