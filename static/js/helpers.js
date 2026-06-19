@@ -27,7 +27,10 @@ function replaceNewLine(text) {
   return String(text).replaceAll("*new_line*", "<br><br>");
 }
 function projectInfoTemplate(projObj) {
-  var title = '<p class="info-data info-title">' + projObj.title + "</p>";
+  var title =
+    '<div class="info-data info-title"><strong>' +
+    projObj.title +
+    "</strong></div>";
 
   var status = '<p class="info-data">' + projObj.status + " ";
   if (projObj.timeline.from == projObj.timeline.to) {
@@ -42,19 +45,32 @@ function projectInfoTemplate(projObj) {
     replaceNewLine(projObj.details.description) +
     "</p>";
 
+  var funder =
+    '<strong class="info-data">Who funded this project?:</strong>' +
+    '<p class="info-data">' +
+    (projObj.funder ? projObj.funder : "UNDEFINED") +
+    "</p>";
+
+  var lead_implementation_entity =
+    '<strong class="info-data">Lead Implementation Entity:</strong>' +
+    '<p class="info-data">' +
+    (projObj.lead_entity ? projObj.lead_entity : "UNDEFINED") +
+    "</p>";
+
   var imp_entity =
-    '<h4 class="info-data">Implementation Entities:</h4><ul>' +
+    '<strong class="info-data">Implementation Entities:</strong><ul>' +
     addList(projObj.implementationEntity) +
     "</ul>";
 
-  var locations = '<h4 class="info-data info-loc">Locations:</h4><ul>';
+  var locations = '<strong class="info-data info-loc">Locations:</strong><ul>';
   Object.entries(projObj.locations).forEach(([district, places]) => {
     if (places === undefined || places.length == 0) {
       return;
     } else {
       const districtName = districts_map[district] || district;
 
-      locations = locations + "<h5>" + districtName + "</h5><ul>";
+      locations =
+        locations + "<strong>" + districtName + " District </strong><ul>";
       places.forEach((p) => {
         locations = locations + "<li>" + p + "</li>";
       });
@@ -64,39 +80,39 @@ function projectInfoTemplate(projObj) {
   locations = locations + "</ul>";
 
   var intended_beneficiaries =
-    '<h4 class="info-data">Intended beneficiaries:</h4>' +
+    '<strong class="info-data">Intended beneficiaries:</strong>' +
     '<p class="info-data">' +
     replaceNewLine(projObj.details.beneficiaries) +
     "</p>";
 
   var societal_challenges =
-    '<h4 class="info-data">Societal challenges addressed:</h4><ul>' +
+    '<strong class="info-data">Societal challenges addressed:</strong><ul>' +
     addList(projObj.details.societalChallenges) +
     "</ul>";
   var ecosystems_targeted =
-    '<h4 class="info-data">Ecosystems targeted:</h4><ul>' +
+    '<strong class="info-data">Ecosystems targeted:</strong><ul>' +
     addList(projObj.details.ecosystemsTargeted) +
     "</ul>";
 
   var ecosystem_svcs_enhanced =
-    '<h4 class="info-data">Ecosystem services enhanced:</h4>' +
+    '<strong class="info-data">Ecosystem services enhanced:</strong>' +
     '<p class="info-data">' +
     replaceNewLine(projObj.details.servicesEnhanced) +
     "</p>";
 
   var climate_risks =
-    '<h4 class="info-data">Climate risks addressed:</h4>' +
+    '<strong class="info-data">Climate risks addressed:</strong>' +
     '<p class="info-data">' +
     replaceNewLine(projObj.details.climate_risks) +
     "</p>";
 
   var biodiversity_risks =
-    '<h4 class="info-data">Biodiversity risks addressed:</h4>' +
+    '<strong class="info-data">Biodiversity risks addressed:</strong>' +
     '<p class="info-data">' +
     replaceNewLine(projObj.details.biodiversity_risks) +
     "</p>";
 
-  var references = '<h4 class="info-data">Reference(s):</h4><ul>';
+  var references = '<strong class="info-data">Resources:</strong><ul>';
   projObj.details.references.forEach((r) => {
     if (String(r).includes("https")) {
       references =
@@ -116,6 +132,8 @@ function projectInfoTemplate(projObj) {
     title +
     status +
     description +
+    funder +
+    lead_implementation_entity +
     imp_entity +
     locations +
     intended_beneficiaries +

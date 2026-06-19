@@ -31,6 +31,8 @@
             ECOSYSTEMS: "filter_type_ecosystems"
         };
 
+        const clean_exclusions = ["corozal town"]
+
         // Helper to fech local files
         function fetchFile(filename) {
             return fetch("/static/data/" + filename)
@@ -130,33 +132,49 @@
             title_p.innerHTML = "<strong>" + obj.title + "</strong>";
             proj_card.appendChild(title_p);
 
-            var proj_status = document.createElement("div");
-            var status_p = document.createElement("p");
-            status_p.textContent = "Status: " + obj.status;
-            proj_status.appendChild(status_p);
-            proj_card.appendChild(proj_status);
+            // var proj_status = document.createElement("div");
+            // var status_p = document.createElement("p");
+            // status_p.textContent = "Status: " + obj.status;
+            // proj_status.appendChild(status_p);
+            // proj_card.appendChild(proj_status);
 
-            let eco_list = document.createElement("div");
-            eco_list.setAttribute("class", "summary-list")
-            obj.details?.ecosystemsTargeted.forEach(eco => {
+            // let eco_list = document.createElement("div");
+            // eco_list.setAttribute("class", "summary-list")
+            // obj.details?.ecosystemsTargeted.forEach(eco => {
 
-                let eco_mem = document.createElement("div");
-                eco_mem.innerText = eco;
-                eco_mem.setAttribute("class", "list-member")
-                eco_list.appendChild(eco_mem)
-            })
-            proj_card.appendChild(eco_list)
+            //     let eco_mem = document.createElement("div");
+            //     eco_mem.innerText = eco;
+            //     eco_mem.setAttribute("class", "list-member")
+            //     eco_list.appendChild(eco_mem)
+            // })
+            // proj_card.appendChild(eco_list)
 
-            let chall_list = document.createElement("div");
-            chall_list.setAttribute("class", "summary-list")
-            obj.details?.societalChallenges.forEach(chall => {
+            //     let eco_mem = document.createElement("div");
+            //     eco_mem.innerText = eco;
+            //     eco_mem.setAttribute("class", "list-member")
+            //     eco_list.appendChild(eco_mem)
+            // })
+            // proj_card.appendChild(eco_list)
 
-                let chall_mem = document.createElement("div");
-                chall_mem.innerText = chall;
-                chall_mem.setAttribute("class", "list-member")
-                chall_list.appendChild(chall_mem)
-            })
-            proj_card.appendChild(chall_list)
+            var proj_lead_implm_end = document.createElement("div");
+            var lead_ent = document.createElement("p");
+            lead_ent.innerHTML = "<strong>Lead Entity:</strong><p>" + (obj.lead_entity ? obj.lead_entity : "UNDEFINED" + "</p>");
+            proj_lead_implm_end.appendChild(lead_ent);
+            proj_card.appendChild(proj_lead_implm_end);
+
+
+            createExpandableSection(proj_card, "Societal Challenges", obj.details?.societalChallenges)
+
+            // let chall_list = document.createElement("div");
+            // chall_list.setAttribute("class", "summary-list")
+            // obj.details?.societalChallenges.forEach(chall => {
+
+            //     let chall_mem = document.createElement("div");
+            //     chall_mem.innerText = chall;
+            //     chall_mem.setAttribute("class", "list-member")
+            //     chall_list.appendChild(chall_mem)
+            // })
+            // proj_card.appendChild(chall_list)
 
             fragment.appendChild(proj_card);
         }
@@ -166,7 +184,7 @@
             return fetchFile("NbS_submissions_clean.csv").then((data) => {
                 dataset = parseCSVtoJSON(data).filter(Boolean);
                 renderCards(dataset);
-                document.getElementById("project_count_block").textContent = project_count + " Projects recorded"
+                //document.getElementById("project_count_block").textContent = project_count + " Projects recorded"
             })
         }
 
@@ -195,7 +213,8 @@
             $(card).append(section);
         }
 
-        function showProjectInfo(projObj) {
+
+        function makeOverlayWindow(child) {
             checkRemoveElementById("proj_overlay_bg")
             var proj_info_overlay_bg = document.createElement("div")
             proj_info_overlay_bg.setAttribute("id", "proj_overlay_bg")
@@ -212,13 +231,71 @@
 
             var info_pane = document.createElement("div")
             info_pane.setAttribute("class", "info-pane")
-            info_pane.innerHTML = projectInfoTemplate(projObj)
+            info_pane.innerHTML = child
             proj_info_overlay.appendChild(info_pane)
 
             var map_area = document.getElementById("leaflet_map_container");
             map_area.appendChild(proj_info_overlay_bg)
             proj_info_overlay_bg.appendChild(proj_info_overlay)
+
         }
+
+        function showProjectInfo(projObj) {
+            makeOverlayWindow(projectInfoTemplate(projObj))
+        }
+
+
+        //"<p></p>"
+        //"<strong></strong>"
+        function showAboutInfo() {
+            html = "<strong>Nature-Based Solutions Inventory for Belize</strong>" +
+                "<strong>What is the Nature-Based Solutions Inventory?</strong>" +
+                "<p>This inventory is intended to showcase the variety of nature-based solutions (NbS) projects (both completed and ongoing) that are being implemented in Belize’s diverse ecosystems. They represent commitments from the Belizean government, civil society organizations, and communities to place ecosystems and nature at the centre of their response to the climate and biodiversity crises, as well as to address increasing risks and vulnerabilities associated with a changing climate.</p>" +
+                "<br>" +
+                "<p>The inventory provides relevant information on the different NbS projects, including their NbS approaches, climate and biodiversity risks addressed, intended beneficiaries, and the ecosystems they target. It provides a useful compilation of NbS projects for the Belizean government, protected areas managers, adaptation and conservation practitioners, civil society organizations, communities, as well as funders to help them understand the landscape of implementation in Belize and facilitate the further adoption and mainstreaming of NbS. It could also help the target audience to research existing NbS efforts in different parts of Belize to understand gaps, avoid duplication of efforts, and facilitate partnership and collaboration. Furthermore, the inventory can be used to identify synergies with other objectives, such as biodiversity conservation, climate change adaptation and mitigation, human health, and water security, amongst others.</p>" +
+                "<br>" +
+                "<p>Previously, Belize relied primarily on engineered, gray infrastructure to address climate change challenges and biodiversity loss. However, a shift toward nature-based solutions (NbS) and civil society-led initiatives has occurred in recent years. Therefore, this inventory captures the past seven years (2018-2025) of NbS implementation in Belize. It is based on an extensive data collection process, which involved desk-based research, correspondence via email and phone with various organizations and government entities, meetings with representatives from non-governmental organizations (NGOs) and community-based organizations (CBOs), and a validation session with key actors who were involved.</p>" +
+                "<br>" +
+                "<p>The inventory has been developed by the International Institute for Sustainable Development (IISD) under the Climate Adaptation and Protected Areas (CAPA) Initiative funded by Global Affairs Canada (GAC). The CAPA Initiative is implemented in Belize by the Wildlife Conservation Society.</p>" +
+                "<br>" +
+                "<strong>Who is the NbS Inventory for? </strong>" +
+                "<p>The inventory has been specifically designed to be utilized by actors working in or with an interest in the NbS sphere of work. These include but are not limited to:<ul><li>Government agencies involved in policy development and implementation</li><li>Local authorities</li><li>Protected areas managers</li><li>Indigenous communities</li><li>Civil society organizations</li><li>Funding agencies (i.e., philanthropies, donor partners)</li><li>Academia</li></ul></p>" +
+                "<br>" +
+                "<strong>What are NbS? </strong>" +
+                "<p>NbS are “actions to protect, conserve, restore, sustainably use and manage natural or modified terrestrial, freshwater, coastal and marine ecosystems which address social, economic and environmental challenges effectively and adaptively, while simultaneously providing human well-being, ecosystem services, resilience and biodiversity benefits” (United Nations Environment Assembly, 2022). These actions help people and communities mitigate and adapt to climate change and increase ecosystem resilience. They can also provide social co-benefits by recognizing and involving underrepresented groups as active agents of change within the implementation of NbS for adaptation.</p>" +
+                "<br>" +
+                "<strong>Ecosystem-based Adaptation in Belize</strong>" +
+                "<p>Ecosystem-based adaptation (EbA) actions, a subset of NbS, use “biodiversity and ecosystem services as part of an overall adaptation strategy to help people adapt to the adverse effects of climate change” (Convention on Biological Diversity, 2009). They include measures that protect, conserve, restore, sustainably use, and manage natural ecosystems with the aim of strengthening the resilience of communities and ecosystems to the impacts of climate change. They involve assessing how climate change will affect ecosystems and people of all genders and social backgrounds and identifying how ecosystems could help address these impacts to people. EbA is synonymous with NbS for adaptation. </p>" +
+                "<br>" +
+                "<strong>Why do NbS and EbA matter for Belize?</strong>" +
+                "<p>Belize boasts a wealth of biodiversity, including the Belize Barrier Reef Reserve System, which protects various ecosystems including mangrove forests, coral reefs, and seagrass beds, and the Maya Forest Corridor, which is home to notable tropical species, such as jaguars, Baird’s tapirs, and white-lipped peccaries. However, the country’s flat, low-lying terrain, extensive coastline, and over 1,060 small islands exacerbate its vulnerability to a range of climate hazards, including sea level rise, ocean acidification, hurricanes, flooding, drought, and wildfires (Ministry of Sustainable Development, Climate Change, and Disaster Risk Management, 2021; National Climate Change Office, 2021). These hazards pose significant threats to Belize’s population, environmental integrity, and socio-economic development. As Belize continues to face the impacts of climate change, implementing effective ecosystem-based adaptation strategies, including NbS and EbA, is essential to strengthen the resilience of the country’s population, biodiversity, and ecosystems.</p>" +
+                "<br>" +
+                "<strong>What are we learning about NbS in Belize?</strong>" +
+                "<p>A key outcome of the NbS Inventory was to show the concentration and spread of NbS projects throughout the country. NbS projects are being implemented in all districts across Belize, with an even distribution of projects across the Corozal, Stann Creek, and Toledo districts (10-11 projects per district) (see Figure 1). The district with the most projects is the Belize district (18 projects), while the district with the least projects is Orange Walk (5 projects). The extensive number of projects across the country can be attributed to increased financial support from the Government of Belize and external funders, the recent integration of NbS into national policies, and leadership and initiative from civil society actors. The main implementers of NbS in Belize are NGOs, CBOs, associations, and communities.</p>" +
+                "<br>" +
+                "<p>The types of NbS projects being implemented in Belize are diverse, from reforestation, community-based fire management, and climate-smart agriculture in terrestrial areas to mangrove and restoration, and the expansion of protection areas in marine and coastal landscapes. </p>" +
+                "<br>" +
+                "<p>Figure 1. Distribution of NbS projects in Belize by district.</p>" +
+                "<table>" +
+                "<tr><th>District</th><th>Project Count</th></tr>" +
+                "<tr><td>Corozal</td><td>10</td></tr>" +
+                "<tr><td>Orange Walk</td><td>5</td></tr>" +
+                "<tr><td>Belize</td><td>18</td></tr>" +
+                "<tr><td>Cayo</td><td>9</td></tr>" +
+                "<tr><td>Stann Creek</td><td>11</td></tr>" +
+                "<tr><td>Toledo</td><td>10</td></tr>" +
+                "</table>"
+
+
+
+
+
+
+
+            makeOverlayWindow(html)
+        }
+
+
 
         // This Section is for filtering the sidebar Cards===========================================
         function renderCards(data) {
@@ -231,6 +308,7 @@
             $("#sidebar_loader").fadeOut("slow");
             document.getElementById("sidebar_container").style.overflowY = "scroll";
         }
+
         function reloadCards() {
             renderCards(dataset)
         }
@@ -276,7 +354,6 @@
         }
 
         // Fetch location_coordinates.csv and map it to a JSON array
-        const clean_exclusions = ["corozal town"]
         function buildGeoJSON() {
             return fetchFile("location_coordinates.csv").then((data) => {
                 const lines = data.trim().split("\n");
@@ -349,6 +426,10 @@
             buildProjectCardSideBar().then(() => {
                 buildGeoJSON()
             })
+
+            document.getElementById("about_inventory_text").addEventListener('click', function () {
+                showAboutInfo();
+            })
         }
     </script>
     <style>
@@ -362,12 +443,24 @@
 
             --text-light: #f4f4f4;
             --text-dark: #2c3e50;
-            --header-bg-color: rgb(51, 157, 255);
-            --eri-purple: rgb(123, 45, 145);
+
+            --capa-primary-navy-blue: rgb(8 50 102);
+            --capa-primary-light-blue: rgb(41 195 236);
+            --capa-primary-light-green: rgb(151 200 72);
         }
 
         body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            /*font-family: "Campton", sans-serif;*/
+        }
+
+        strong {
+            font-family: "Campton", sans-serif;
+            font-weight: normal;
+        }
+
+        p,
+        li {
+            font-family: "Plantin", sans-serif;
         }
 
         /*Sidebar Loader*/
@@ -387,7 +480,7 @@
 
         .loader {
             border: 4px solid #f3f3f3;
-            border-top: 4px solid var(--eri-purple);
+            border-top: 4px solid var(--capa-primary-light-green);
             border-radius: 50%;
             width: 30px;
             height: 30px;
@@ -411,7 +504,7 @@
             flex-direction: column;
             gap: 15px;
             padding: 10px;
-            max-width: 350px;
+            width: 95%;
         }
 
         .proj_card {
@@ -419,9 +512,9 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 16px;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            border-left: 5px solid var(--primary-color);
+            border-left: 5px solid var(--capa-primary-light-blue);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
         }
 
         .proj_card:hover {
@@ -469,12 +562,30 @@
             height: 7vh;
             width: 100vw;
             margin: 0;
-            background-color: rgb(123, 45, 145);
+            background-color: var(--capa-primary-light-green);
             color: white;
         }
 
         .header-bar-block {
-            margin: 0px 20px;
+            margin: 0px 10px;
+            display: flex;
+        }
+
+        .header-bar-block strong {
+            margin: 0;
+            padding: 10px;
+            color: white;
+            font-size: 20px
+        }
+
+        .header-bar-block a {
+            text-decoration: inherit;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .header-bar-block a:hover {
+            color: var(--capa-primary-light-blue);
         }
 
         /*Helpers*/
@@ -485,35 +596,53 @@
 </head>
 
 <body style="width: 100%; margin: 0;" onload="initData()">
-    <div class="header-bar-container">
-        <div class="header-bar" style="display: flex;">
-            <div class="header-bar-block">
-                <H2 style="margin: 0; padding: 10px; color: white;">NbS Project Database</H2>
+    <div class="header-bar-container" style="height: 9vh; padding-bottom: 1vh;">
+        <div class="header-bar" style="display: flex; align-items: center; height: inherit;">
+
+            <div class="header-bar-block" style="align-items: center; height: inherit;">
+                <a href="https://www.iisd.org/capa/" target="_blank"
+                    style="height: inherit; display: flex; align-items: center; text-decoration: none;">
+                    <img style="height: 90%;" src="./static/img/logo/capa-logo-cmyk_colour.png" alt="CAPA Logo">
+                </a>
             </div>
 
-            <div class="header-bar-block" style="display: flex; align-items: center;justify-content: center;">
+            <div class="header-bar-block " style="width: 350px;">
+                <strong style="font-size: 30px; font-weight: bold;">Belize NbS Project Inventory</strong>
+            </div>
+
+            <div class="header-bar-block" style="align-items: center; justify-content: center; flex: 1;">
                 <div style="align-self: center;">
-                    <label style="margin: 0; padding: 10px; color: white;" for="p_filter_type">Search Projects
-                        by</label>
+                    <label style="margin: 0; padding: 10px; color: white; font-size: 20px; font-weight: bold;"
+                        for="p_filter_type"><strong>Search
+                            Projects
+                            by</strong></label>
                     <select name="p_filter_type" id="p_filter_type" onchange="updateFilterOption(this.value)">
                         <option value="filter_type_name">Name</option>
                         <option value="filter_type_ongoing">Ongoing</option>
                         <option value="filter_type_completed">Completed</option>
-                        <option value="filter_type_ecosystems">Eosystem Targeted</option>
+                        <option value="filter_type_ecosystems">Ecosystem Targeted</option>
                         <option value="filter_type_challenges">Societal Challenge</option>
                     </select>
                     <input type="text" id="p_filter" name="p_filter" list="filter_options"
                         onkeyup="updateFilterByString(this.value)">
                 </div>
             </div>
-            <div class="header-bar-block">
-                <H2 style="margin: 0; padding: 10px; color: white;" id="project_count_block">0 ammount of projects</H2>
+
+            <div class="header-bar-block" style="margin-left: auto; margin-right: 20px;">
+                <strong>
+                    <a href="https://www.uberibz.org/nbs-project-submission" target="_blank"><strong>Submit a new
+                            Project</strong></a>
+                </strong>
+            </div>
+
+            <div class="header-bar-block " style="margin-right: 20px; cursor:pointer">
+                <strong id="about_inventory_text">About Inventory</strong>
             </div>
         </div>
     </div>
-    <div style="height:93vh; width: 100vw; display: flex;">
+    <div style="height:90vh; width: 100vw; display: flex;">
 
-        <div id="sidebar_container" style="margin: 0; padding:0; height: 100%;flex: 1; overflow-y:hidden">
+        <div id="sidebar_container" style="margin: 0; padding:0; height: 100%;flex: 1.25; overflow-y:hidden;">
             <div id="sidebar_loader" class="sidebar-overlay">
                 <div class="loader"></div>
             </div>
@@ -534,20 +663,24 @@
             console.log("Latitude: " + lat + ", Longitude: " + lng);
         });
 
+        function makeMarkerLayer() {
+            return geoJsonLayer = L.geoJSON(geojson_features, {
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup('<p>' + feature.properties.project_title + ' ' + feature.properties.district + ' ' + feature.properties.location + '</p>');
+                }
+            });
+        }
+
         // Adds all markers from geojson_features to the map.
         function loadDefaultMap() {
             markers = L.markerClusterGroup({
                 disableClusteringAtZoom: 15,
                 showCoverageOnHover: false
             });
-            var geoJsonLayer = L.geoJSON(geojson_features, {
-                onEachFeature: function (feature, layer) {
-                    layer.bindPopup('<p>' + feature.properties.project_title + ' ' + feature.properties.district + ' ' + feature.properties.location + '</p>');
-                }
-            });
-            markers.addLayer(geoJsonLayer);
+            markers.addLayer(makeMarkerLayer());
             map.addLayer(markers);
         }
+
         // Clears the markers from the Map and then re-adds all markers from geojson_features to the map.
         function refreshMap() {
             markers.clearLayers();
@@ -558,6 +691,32 @@
             attribution:
                 '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }).addTo(map);
+
+
+        // Add a refresh button to the map
+        var refreshControl = L.Control.extend({
+            options: {
+                position: 'topleft'
+            },
+            onAdd: function (map) {
+                var btn = L.DomUtil.create('button', 'leaflet-bar refresh-btn');
+                btn.innerHTML = '<img src="./static/img/icon/refresh-icon.png" style="width: 100%; height: 100%; object-fit: contain;" alt="Refresh">';
+                btn.title = 'Refresh Map Markers';
+
+                btn.style.backgroundColor = 'white';
+                btn.style.width = '35px';
+                btn.style.height = '35px';
+                btn.style.cursor = 'pointer';
+
+                L.DomEvent.on(btn, 'click', function (e) {
+                    L.DomEvent.stopPropagation(e);
+                    refreshMap();
+                });
+
+                return btn;
+            }
+        });
+        map.addControl(new refreshControl());
 
         // Clears the markers from the Map and then adds only those that match the specified values proided
         function filterMarkersByProperty(propName, propVal) {

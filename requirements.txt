@@ -1,5 +1,0 @@
-Flask
-leafmap
-pandas
-numpy
-gunicorn
