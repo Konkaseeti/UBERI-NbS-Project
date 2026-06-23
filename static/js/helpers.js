@@ -17,14 +17,19 @@ function checkRemoveElementById(id) {
 function addList(objectList) {
   var text_to_list = "";
   objectList.forEach((item) => {
-    text_to_list = text_to_list + "<li>" + item + "</li>";
+    formatted_item =
+      String(item).charAt(0).toLocaleUpperCase() + String(item).slice(1);
+    text_to_list = text_to_list + "<li>" + formatted_item + "</li>";
   });
   return text_to_list;
 }
 
 function replaceNewLine(text) {
   if (!text) return "Error: Missing text.";
-  return String(text).replaceAll("*new_line*", "<br><br>");
+  cleaned_text = String(text)
+    .trim()
+    .replace(/\*new_line\*$/, "");
+  return String(cleaned_text).replaceAll("*new_line*", "<br><br>");
 }
 function projectInfoTemplate(projObj) {
   var title =
@@ -45,22 +50,36 @@ function projectInfoTemplate(projObj) {
     replaceNewLine(projObj.details.description) +
     "</p>";
 
-  var funder =
-    '<strong class="info-data">Who funded this project?:</strong>' +
-    '<p class="info-data">' +
-    (projObj.funder ? projObj.funder : "UNDEFINED") +
-    "</p>";
+  var funder = "";
+  if (
+    projObj.details.funder &&
+    projObj.details.funder.length > 0 &&
+    projObj.details.funder[0].trim() !== ""
+  ) {
+    funder =
+      '<strong class="info-data">Who funded this project?:</strong>' +
+      '<p class="info-data">' +
+      (projObj.details.funder ? projObj.details.funder : "undefined") +
+      "</p>";
+  }
 
   var lead_implementation_entity =
     '<strong class="info-data">Lead Implementation Entity:</strong>' +
     '<p class="info-data">' +
-    (projObj.lead_entity ? projObj.lead_entity : "UNDEFINED") +
+    (projObj.lead_entity ? projObj.lead_entity : "undefined") +
     "</p>";
 
-  var imp_entity =
-    '<strong class="info-data">Implementation Entities:</strong><ul>' +
-    addList(projObj.implementationEntity) +
-    "</ul>";
+  var imp_entity = "";
+  if (
+    projObj.implementationEntity &&
+    projObj.implementationEntity.length > 0 &&
+    projObj.implementationEntity[0].trim() !== ""
+  ) {
+    imp_entity =
+      '<strong class="info-data">Implementation Entities:</strong><ul>' +
+      addList(projObj.implementationEntity) +
+      "</ul>";
+  }
 
   var locations = '<strong class="info-data info-loc">Locations:</strong><ul>';
   Object.entries(projObj.locations).forEach(([district, places]) => {
@@ -118,6 +137,14 @@ function projectInfoTemplate(projObj) {
       references =
         references +
         '<li><a href="' +
+        r +
+        '" target="_blank">' +
+        r +
+        "</a></li>";
+    } else if (String(r).includes("www.") && !String(r).includes("https")) {
+      references =
+        references +
+        '<li><a href="https://' +
         r +
         '" target="_blank">' +
         r +

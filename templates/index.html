@@ -85,30 +85,33 @@
                 // Build JSON object using the processed CSV pieces
                 return {
                     project_id: `P${String(index + 1).padStart(4, '0')}`, // Dynamically generates the project ID;  P0001, P0002, ... used later to map points on the map.
-                    title: pieces[0],
-                    implementationEntity: splitToArray(pieces[4]),
-                    status: pieces[1],
+                    title: pieces[0], // project Title
+                    ongoing: pieces[4], // ongoing Initiative?
+                    lead_entity: pieces[5], // The Implementation Entity
+                    implementationEntity: splitToArray(pieces[6]), // The Executing Entities
+                    status: pieces[1], // Completed or Ongoing?
                     timeline: {
                         from: pieces[2] || "",
                         to: pieces[3] || ""
                     },
                     locations: {
-                        corozal: splitToArray(pieces[13]),
-                        orangeWalk: splitToArray(pieces[14]),
-                        belize: splitToArray(pieces[15]),
-                        cayo: splitToArray(pieces[16]),
-                        stannCreek: splitToArray(pieces[17]),
-                        toledo: splitToArray(pieces[18])
+                        corozal: splitToArray(pieces[16]),
+                        orangeWalk: splitToArray(pieces[17]),
+                        belize: splitToArray(pieces[18]),
+                        cayo: splitToArray(pieces[19]),
+                        stannCreek: splitToArray(pieces[20]),
+                        toledo: splitToArray(pieces[21])
                     },
                     details: {
-                        societalChallenges: pieces[7] ? JSON.parse(pieces[7]) : [],
-                        ecosystemsTargeted: splitToArray(pieces[8]),
-                        servicesEnhanced: pieces[9] || "",
-                        beneficiaries: pieces[5] || "",
-                        description: pieces[6] || "",
-                        climate_risks: pieces[10] || "",
-                        biodiversity_risks: pieces[11] || "",
-                        references: splitToArray(pieces[12])
+                        societalChallenges: pieces[10] ? JSON.parse(pieces[10]) : [],
+                        ecosystemsTargeted: splitToArray(pieces[11]),
+                        servicesEnhanced: pieces[12] || "",
+                        beneficiaries: pieces[7] || "",
+                        description: pieces[8] || "",
+                        funder: pieces[9] || "",
+                        climate_risks: pieces[13] || "",
+                        biodiversity_risks: pieces[14] || "",
+                        references: splitToArray(pieces[15])
                     }
                 };
                 //console.log(JSON.stringify(obj, null, 2));
@@ -125,56 +128,22 @@
                 var projectData = this.projectData;
                 showProjectInfo(obj);
                 filterMarkersByProperty("project_id", obj.project_id);
-                //console.log(obj);
             });
 
             var title_p = document.createElement("p");
             title_p.innerHTML = "<strong>" + obj.title + "</strong>";
             proj_card.appendChild(title_p);
 
-            // var proj_status = document.createElement("div");
-            // var status_p = document.createElement("p");
-            // status_p.textContent = "Status: " + obj.status;
-            // proj_status.appendChild(status_p);
-            // proj_card.appendChild(proj_status);
 
-            // let eco_list = document.createElement("div");
-            // eco_list.setAttribute("class", "summary-list")
-            // obj.details?.ecosystemsTargeted.forEach(eco => {
-
-            //     let eco_mem = document.createElement("div");
-            //     eco_mem.innerText = eco;
-            //     eco_mem.setAttribute("class", "list-member")
-            //     eco_list.appendChild(eco_mem)
-            // })
-            // proj_card.appendChild(eco_list)
-
-            //     let eco_mem = document.createElement("div");
-            //     eco_mem.innerText = eco;
-            //     eco_mem.setAttribute("class", "list-member")
-            //     eco_list.appendChild(eco_mem)
-            // })
-            // proj_card.appendChild(eco_list)
 
             var proj_lead_implm_end = document.createElement("div");
             var lead_ent = document.createElement("p");
-            lead_ent.innerHTML = "<strong>Lead Entity:</strong><p>" + (obj.lead_entity ? obj.lead_entity : "UNDEFINED" + "</p>");
+            lead_ent.innerHTML = "<strong>Lead Entity:</strong><p>" + (obj.lead_entity ? obj.lead_entity : "undefined" + "</p>");
             proj_lead_implm_end.appendChild(lead_ent);
             proj_card.appendChild(proj_lead_implm_end);
 
 
             createExpandableSection(proj_card, "Societal Challenges", obj.details?.societalChallenges)
-
-            // let chall_list = document.createElement("div");
-            // chall_list.setAttribute("class", "summary-list")
-            // obj.details?.societalChallenges.forEach(chall => {
-
-            //     let chall_mem = document.createElement("div");
-            //     chall_mem.innerText = chall;
-            //     chall_mem.setAttribute("class", "list-member")
-            //     chall_list.appendChild(chall_mem)
-            // })
-            // proj_card.appendChild(chall_list)
 
             fragment.appendChild(proj_card);
         }
@@ -247,6 +216,7 @@
 
         //"<p></p>"
         //"<strong></strong>"
+        // TEMPORARY, THIS WILL USE A TEXT FILE LATER OR MAYBE THE SAME README FILE =================
         function showAboutInfo() {
             html = "<strong>Nature-Based Solutions Inventory for Belize</strong>" +
                 "<strong>What is the Nature-Based Solutions Inventory?</strong>" +
@@ -285,15 +255,9 @@
                 "<tr><td>Stann Creek</td><td>11</td></tr>" +
                 "<tr><td>Toledo</td><td>10</td></tr>" +
                 "</table>"
-
-
-
-
-
-
-
             makeOverlayWindow(html)
         }
+        // ==========================================================================================
 
 
 
@@ -413,6 +377,9 @@
                                         project_title: project.title,
                                     }
                                 });
+                            } else {
+                                // Log locations not found on the location_coordinates  CSV
+                                console.warn(`Location not found: "${locName}" in district "${district}" (Looked for key: "${`${cleanDistKey}_${clean_loc_key}`}")`);
                             }
                         });
                     });
@@ -588,6 +555,10 @@
             color: var(--capa-primary-light-blue);
         }
 
+        #p_filter_type option {
+            border-radius: 8px;
+        }
+
         /*Helpers*/
         .hidden-filter {
             display: none;
@@ -616,15 +587,16 @@
                         for="p_filter_type"><strong>Search
                             Projects
                             by</strong></label>
-                    <select name="p_filter_type" id="p_filter_type" onchange="updateFilterOption(this.value)">
+                    <select name="p_filter_type" id="p_filter_type" style="border-radius: 8px; padding: 4px"
+                        onchange="updateFilterOption(this.value)">
                         <option value="filter_type_name">Name</option>
                         <option value="filter_type_ongoing">Ongoing</option>
                         <option value="filter_type_completed">Completed</option>
                         <option value="filter_type_ecosystems">Ecosystem Targeted</option>
                         <option value="filter_type_challenges">Societal Challenge</option>
                     </select>
-                    <input type="text" id="p_filter" name="p_filter" list="filter_options"
-                        onkeyup="updateFilterByString(this.value)">
+                    <input type="text" id="p_filter" style="border-radius: 8px; padding: 4px" name="p_filter"
+                        list="filter_options" onkeyup="updateFilterByString(this.value)">
                 </div>
             </div>
 
