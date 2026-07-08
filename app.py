@@ -1,10 +1,5 @@
 # app.py
 from flask import Flask, render_template, request, jsonify
-import leafmap.foliumap as leafmap
-import pandas as pandas
-import numpy as numpy
-import os
-import json
 
 app = Flask(__name__)
 @app.route('/')
